@@ -1,38 +1,43 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:ivalueu_app/screens/emotional/emotional_list.dart';
+
 class Emotional extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('I Value U'),
-        backgroundColor: Colors.grey,
-      ),
-      body: Center(
+
+    return CupertinoPageScaffold(
+
+      child: Center(
           child: Column(
             children: [
-              Image.asset('assets/images/MapleLeafLarge.png'),
+              GestureDetector(
+                  child: Image.asset('assets/images/MapleLeafLarge.png')),
+
               Container(
                 width: 240.0,
                 height: 42.0,
                 decoration: BoxDecoration(
-                  color: Colors.black12,
-                ),
-                child: Center(
-                  child: Text(
-                    'Emotional Wellbeing',
+                  color: CupertinoColors.systemGrey4,),
+                  child: Center(
+                    child: Text(
+                    'Emotional Wellbeingingus',
                     style: TextStyle(
-                      fontFamily: 'Arial',
-                      fontSize: 18,
-                      color: Colors.black,
-                      height: 1,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
+                    fontFamily: 'Arial',
+                    fontSize: 18,
+                    color: CupertinoColors.black,
+                    height: 1,
                 ),
+                textAlign: TextAlign.center,
               ),
-            ],
-          )
-      ),
+            ),
+          ),
+        ],
+      )),
     );
   }
+
+
 }
+
+// user defined function

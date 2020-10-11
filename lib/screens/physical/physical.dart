@@ -1,13 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 class Physical extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('I Value U'),
-        backgroundColor: Colors.grey,
-      ),
-      body: Center(
+    return CupertinoPageScaffold(
+
+      child: Center(
           child: Column(
             children: [
               Image.asset('assets/images/MapleLeafLarge.png'),
@@ -15,7 +12,7 @@ class Physical extends StatelessWidget {
                 width: 240.0,
                 height: 42.0,
                 decoration: BoxDecoration(
-                  color: Colors.black12,
+                  color: CupertinoColors.systemGrey4,
                 ),
                 child: Center(
                   child: Text(
@@ -23,7 +20,7 @@ class Physical extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Arial',
                       fontSize: 18,
-                      color: Colors.black,
+                      color: CupertinoColors.black,
                       height: 1,
                     ),
                     textAlign: TextAlign.center,
