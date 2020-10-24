@@ -24,6 +24,9 @@ dependencies:
   custom_navigator: ^0.2.0
   flutter:
     sdk: flutter
+  intl: ^0.16.1
+  provider: ^4.1.1
+  shrine_images: ^1.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
