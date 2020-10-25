@@ -7,33 +7,52 @@ class Emotional extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: const Text('IValueU'),
+      ),
 
-      child: Center(
-          child: Column(
-            children: [
-              GestureDetector(
-                  child: Image.asset('assets/images/MapleLeafLarge.png')),
+      child: SafeArea(
+        child: Center(
+            child: Column(
+              children: [
+                GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        CupertinoPageRoute(builder: (context) => EmotionalList()),
+                      );
+                    },
+                    child: Image.asset('assets/images/MapleLeafLarge.png')),
 
-              Container(
-                width: 240.0,
-                height: 42.0,
-                decoration: BoxDecoration(
-                  color: CupertinoColors.systemGrey4,),
-                  child: Center(
-                    child: Text(
-                    'Emotional Wellbeingingus',
-                    style: TextStyle(
-                    fontFamily: 'Arial',
-                    fontSize: 18,
-                    color: CupertinoColors.black,
-                    height: 1,
-                ),
-                textAlign: TextAlign.center,
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      CupertinoPageRoute(builder: (context) => EmotionalList()),
+                    );
+                  },
+                  child: Container(
+                    width: 240.0,
+                    height: 42.0,
+                    decoration: BoxDecoration(
+                      color: CupertinoColors.systemGrey4,),
+                      child: Center(
+                        child: Text(
+                        'Emotional Wellbeingingus',
+                        style: TextStyle(
+                        fontFamily: 'Arial',
+                        fontSize: 18,
+                        color: CupertinoColors.black,
+                        height: 1,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
               ),
             ),
-          ),
-        ],
-      )),
+                ),
+          ],
+        )),
+      ),
     );
   }
 

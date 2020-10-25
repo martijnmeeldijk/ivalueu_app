@@ -24,32 +24,27 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
-
+        iconSize: 200,
         items:  <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Image.asset("assets/images/IValueU Grey maple leaf.png", width: 75,),
-            activeIcon: Image.asset("assets/images/IValueU Blue maple leaf.png", width: 75,),
-            title: Text(''),
+            icon: Image.asset("assets/images/IValueU Grey maple leaf.png"),
+            activeIcon: Image.asset("assets/images/IValueU Blue maple leaf.png"),
           ),
           BottomNavigationBarItem(
-            icon: Image.asset("assets/images/Physical Grey maple leaf.png", width: 75,),
-            activeIcon: Image.asset("assets/images/Physical Blue maple leaf.png", width: 75,),
-            title: Text(''),
+            icon: Image.asset("assets/images/Physical Grey maple leaf.png"),
+            activeIcon: Image.asset("assets/images/Physical Blue maple leaf.png"),
           ),
           BottomNavigationBarItem(
-            icon: Image.asset("assets/images/Emotional Grey maple leaf.png", width: 75,),
-            activeIcon: Image.asset("assets/images/Emotional Blue maple leaf.png", width: 75,),
-            title: Text(''),
+            icon: Image.asset("assets/images/Emotional Grey maple leaf.png"),
+            activeIcon: Image.asset("assets/images/Emotional Blue maple leaf.png"),
           ),
           BottomNavigationBarItem(
-            icon: Image.asset("assets/images/Photo Diary Grey maple leaf.png", width: 75,),
-            activeIcon: Image.asset("assets/images/Photo Diary Blue maple leaf.png", width: 75,),
-            title: Text(''),
+            icon: Image.asset("assets/images/Photo Diary Grey maple leaf.png"),
+            activeIcon: Image.asset("assets/images/Photo Diary Blue maple leaf.png"),
           ),
           BottomNavigationBarItem(
-            icon: Image.asset("assets/images/More Grey maple leaf.png", width: 75,),
-            activeIcon: Image.asset("assets/images/More Blue maple leaf.png", width: 75,),
-            title: Text(''),
+            icon: Image.asset("assets/images/More Grey maple leaf.png"),
+            activeIcon: Image.asset("assets/images/More Blue maple leaf.png"),
           ),
         ],
       ),

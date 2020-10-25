@@ -1,11 +1,15 @@
 import 'package:flutter/cupertino.dart';
+
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-
-      child: Center(
-        child: Column(
+      navigationBar: CupertinoNavigationBar(
+        middle: const Text('IValueU'),
+      ),
+      child: SafeArea(
+        child: Center(
+            child: Column(
           children: [
             Image.asset('assets/images/MapleLeafLarge.png'),
             Container(
@@ -28,7 +32,7 @@ class Home extends StatelessWidget {
               ),
             ),
           ],
-        )
+        )),
       ),
     );
   }
