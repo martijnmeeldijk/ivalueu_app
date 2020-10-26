@@ -2,7 +2,6 @@ import 'package:custom_navigator/custom_navigation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:ivalueu_app/model/app_state_model.dart';
 import 'screens/app.dart';
 
 void main() {

@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:ivalueu_app/screens/physical/video_list.dart';
 import 'package:provider/provider.dart';
 
-import 'package:ivalueu_app/model/app_state_model.dart';
 import 'package:ivalueu_app/model/video.dart';
 import 'package:ivalueu_app/Styles.dart';
 
@@ -30,44 +29,40 @@ class EmotionalRowItem extends StatelessWidget {
       ),
       child: GestureDetector(
         onTap: () {
-          Navigator.push(
-            context,
-            CupertinoPageRoute(
-                builder: (context) => VideoList(category: group.category)),
-          );
+          Navigator.push(context, CupertinoPageRoute(builder: (context) => VideoList(category: group.category)),);
         },
-        child: Row(
-          children: <Widget>[
-            ClipRRect(
-              borderRadius: BorderRadius.circular(4),
-              child: Image.asset(
-                group.iconAsset,
-                fit: BoxFit.cover,
-                width: 76,
-                height: 76,
-              ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      group.name,
-                      style: Styles.VideoRowItemName,
-                    ),
-                    const Padding(padding: EdgeInsets.only(top: 8)),
-                    Text(
-                      '\$${group.category}',
-                      style: Styles.VideoRowItemPrice,
-                    )
-                  ],
+        child: SizedBox(
+          height: 110,
+          child: Column(
+            children: <Widget>[
+              ClipRRect(
+                borderRadius: BorderRadius.circular(4),
+                child: Image.asset(
+                  group.iconAsset,
+                  fit: BoxFit.cover,
+                  width: 76,
+                  height: 76,
                 ),
               ),
-            ),
-          ],
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        group.name,
+                        style: Styles.VideoRowItemName,
+                      ),
+                      const Padding(padding: EdgeInsets.only(top: 8)),
+
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -84,10 +79,7 @@ class EmotionalRowItem extends StatelessWidget {
             left: 100,
             right: 16,
           ),
-          child: Container(
-            height: 1,
-            color: Styles.VideoRowDivider,
-          ),
+
         ),
       ],
     );

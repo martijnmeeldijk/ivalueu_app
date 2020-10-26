@@ -3,7 +3,6 @@ import 'package:flutter/foundation.dart';
 import 'package:ivalueu_app/model/video.dart';
 import 'package:ivalueu_app/model/video_repository.dart';
 import 'package:provider/provider.dart';
-import 'package:ivalueu_app/model/app_state_model.dart';
 import 'video_row_item.dart';
 
 class VideoList extends StatelessWidget {

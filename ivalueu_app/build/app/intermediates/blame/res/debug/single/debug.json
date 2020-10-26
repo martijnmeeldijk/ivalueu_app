@@ -764,6 +764,10 @@
         "source": "/Users/martijn/.gradle/caches/transforms-2/files-2.1/a528b13ac93e64cafa3d0480e2c93207/core-1.1.0/res/layout/notification_template_part_chronometer.xml"
     },
     {
+        "merged": "/Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/res/merged/debug/xml_flutter_image_picker_file_paths.xml.flat",
+        "source": "/Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/image_picker/intermediates/packaged_res/debug/xml/flutter_image_picker_file_paths.xml"
+    },
+    {
         "merged": "/Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "/Users/martijn/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/drawable-hdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
     },

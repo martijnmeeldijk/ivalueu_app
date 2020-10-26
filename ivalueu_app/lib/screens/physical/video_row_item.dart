@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:ivalueu_app/screens/physical/video_preview.dart';
 import 'package:provider/provider.dart';
 
-import 'package:ivalueu_app/model/app_state_model.dart';
 import 'package:ivalueu_app/model/video.dart';
 import 'package:ivalueu_app/Styles.dart';
 
@@ -36,39 +35,38 @@ class VideoRowItem extends StatelessWidget {
                 builder: (context) => VideoPreview(video: video,)),
           );
         },
-        child: Row(
-          children: <Widget>[
-            ClipRRect(
-              borderRadius: BorderRadius.circular(4),
-              child: Image.asset(
-                video.iconAsset,
-                fit: BoxFit.cover,
-                width: 76,
-                height: 76,
-              ),
-            ),
-
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      video.name,
-                      style: Styles.VideoRowItemName,
-                    ),
-                    const Padding(padding: EdgeInsets.only(top: 8)),
-                    Text(
-                      '\$${video.category}',
-                      style: Styles.VideoRowItemPrice,
-                    )
-                  ],
+        child: SizedBox(
+          height: 110,
+          child: Column(
+            children: <Widget>[
+              ClipRRect(
+                borderRadius: BorderRadius.circular(4),
+                child: Image.asset(
+                  video.iconAsset,
+                  fit: BoxFit.cover,
+                  width: 76,
+                  height: 76,
                 ),
               ),
-            ),
-          ],
+
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        video.name,
+                        style: Styles.VideoRowItemName,
+                      ),
+                      const Padding(padding: EdgeInsets.only(top: 8)),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -85,10 +83,7 @@ class VideoRowItem extends StatelessWidget {
             left: 100,
             right: 16,
           ),
-          child: Container(
-            height: 1,
-            color: Styles.VideoRowDivider,
-          ),
+
         ),
       ],
     );

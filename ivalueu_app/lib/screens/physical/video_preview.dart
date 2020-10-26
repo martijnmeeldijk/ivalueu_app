@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:ivalueu_app/model/video.dart';
 import 'package:ivalueu_app/screens/physical/video_list.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:flutter/material.dart';
 
 class VideoPreview extends StatelessWidget {
-  const VideoPreview({
-    this.video
-  });
+  const VideoPreview({this.video});
   final Video video;
 
   @override
@@ -26,16 +26,19 @@ class VideoPreview extends StatelessWidget {
       child: SafeArea(
         child: Center(
             child: Column(
-              children: [
+          children: [
                 YoutubePlayer(
                   controller: _controller,
                   showVideoProgressIndicator: true,
+                  liveUIColor: CupertinoColors.systemRed,
+                  bottomActions: [
+                    CurrentPosition(),
+                    ProgressBar(isExpanded: true),
 
-                ),
-
-
-              ],
-            )),
+                  ],
+              )
+          ],
+        )),
       ),
     );
   }

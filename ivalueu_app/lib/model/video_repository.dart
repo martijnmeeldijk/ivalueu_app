@@ -132,7 +132,7 @@ class VideosRepository {
     Video(
         name: "Meditation Animation",
         category: VideoCategory.emotional1,
-        location: Location.indoors,
+        location: Location.outdoors,
         url: "https://youtu.be/KB6CYtpNNEc",
         id: "meditation_animation",
         icon: "Meditation"),
@@ -184,8 +184,6 @@ class EmotionalGroupRepository {
         category: VideoCategory.emotional4,
         icon: "Blaenycwn school logo"
     ),
-    EmotionalGroup(
-        name: "Meditation Animation", category: VideoCategory.emotional1, icon: "Meditation"),
   ];
   static List<EmotionalGroup> loadGroups() {
     return _allGroups.toList();
