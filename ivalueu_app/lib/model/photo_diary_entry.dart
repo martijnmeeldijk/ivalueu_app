@@ -1,11 +1,10 @@
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
 
 class PhotoDiaryEntry{
   PhotoDiaryEntry({
-    @required this.title,
-    @required this.description,
+    this.title,
+    this.description,
     this.image
   });
   String title;

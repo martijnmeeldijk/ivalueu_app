@@ -2,11 +2,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:ivalueu_app/model/video.dart';
 import 'package:ivalueu_app/model/video_repository.dart';
-import 'package:provider/provider.dart';
 
 import 'emotional_row_item.dart';
 
 class EmotionalList extends StatelessWidget {
+  const EmotionalList({
+    Key key,
+    this.location
+  }) : super(key: key);
+
+  final Location location;
+
   @override
   Widget build(BuildContext context) {
     final groups = EmotionalGroupRepository.loadGroups();
@@ -27,12 +33,14 @@ class EmotionalList extends StatelessWidget {
                     index: index,
                     group: groups[index],
                     lastItem: index == groups.length - 1,
+                    location: location,
                   );
                 }
 
                 return null;
               },
             ),
+            
           ),
         )
       ],

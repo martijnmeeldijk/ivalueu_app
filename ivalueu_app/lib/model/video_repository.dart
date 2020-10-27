@@ -129,13 +129,7 @@ class VideosRepository {
         url: "https://youtu.be/Aq3aQwdz8JA",
         id: "E4-5",
         icon: "Blaenycwn school logo"),
-    Video(
-        name: "Meditation Animation",
-        category: VideoCategory.emotional1,
-        location: Location.outdoors,
-        url: "https://youtu.be/KB6CYtpNNEc",
-        id: "meditation_animation",
-        icon: "Meditation"),
+
     Video(
         name: "HITT Tutorial",
         category: VideoCategory.physical,
@@ -166,8 +160,8 @@ class VideosRepository {
         icon: "Blaenycwn school logo"),
   ];
 
-  static List<Video> loadVideos(VideoCategory category) {
-    return _allVideos.where((p) => p.category == category).toList();
+  static List<Video> loadVideos(VideoCategory category, Location location) {
+    return _allVideos.where((p) => p.category == category && p.location == location).toList();
   }
 }
 
@@ -184,8 +178,21 @@ class EmotionalGroupRepository {
         category: VideoCategory.emotional4,
         icon: "Blaenycwn school logo"
     ),
+    EmotionalGroup(
+        name: "Meditation Animation",
+        category: VideoCategory.meditation,
+        icon: "Meditation"
+    ),
   ];
   static List<EmotionalGroup> loadGroups() {
     return _allGroups.toList();
   }
+
+  /*Video(
+  name: "Meditation Animation",
+  category: VideoCategory.emotional1,
+  location: Location.outdoors,
+  url: "https://youtu.be/KB6CYtpNNEc",
+  id: "meditation_animation",
+  icon: "Meditation"),*/
 }

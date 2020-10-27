@@ -2,19 +2,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:ivalueu_app/model/video.dart';
 import 'package:ivalueu_app/model/video_repository.dart';
-import 'package:provider/provider.dart';
 import 'video_row_item.dart';
 
 class VideoList extends StatelessWidget {
   const VideoList({
     Key key,
-    this.category
+    this.category,
+    this.location
   }) : super(key: key);
 
   final VideoCategory category;
+  final Location location;
   @override
   Widget build(BuildContext context) {
-    final videos = VideosRepository.loadVideos(category);
+    final videos = VideosRepository.loadVideos(category, location);
     return CustomScrollView(
       semanticChildCount: videos.length,
       slivers: <Widget>[

@@ -6,6 +6,7 @@ enum VideoCategory {
   emotional2,
   emotional3,
   emotional4,
+  meditation
 }
 
 enum Location {

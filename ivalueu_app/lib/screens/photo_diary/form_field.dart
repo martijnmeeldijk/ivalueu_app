@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ivalueu_app/model/photo_diary_entry.dart';
 import 'package:ivalueu_app/model/photo_diary_repository.dart';
-import 'package:ivalueu_app/screens/photo_diary/photo_diary.dart';
 
 class TestForm extends StatefulWidget {
   @override
@@ -22,6 +21,19 @@ class _TestFormState extends State<TestForm> {
 
   @override
   Widget build(BuildContext context) {
+    void _showDialog() {
+      // flutter defined function
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          // return object of type Dialog
+          return CupertinoPopupSurface(
+            child: new Text("Alert Dialog title"),
+
+          );
+        },
+      );
+    }
     if (_image != null) {
       preview = Padding(
         padding: const EdgeInsets.all(40),
@@ -132,6 +144,21 @@ class _TestFormState extends State<TestForm> {
                             image: _image));
                         Navigator.pop(context);
                       }
+                      else{
+                        showCupertinoModalPopup(context: context, builder: (BuildContext context) {
+                          // return object of type Dialog
+                          return Padding(
+                            padding: const EdgeInsets.all(50),
+                            child: CupertinoPopupSurface(
+                              child: Padding(
+                                padding: const EdgeInsets.all(20),
+                                child: Text("Title and description are mandatory!"),
+                              ),
+
+                            ),
+                          );
+                        });
+                      }
                     },
                     child: Text(
                       'Save',
@@ -151,8 +178,9 @@ class _TestFormState extends State<TestForm> {
   }
 }
 
+
 bool valid(String input) {
-  return true;
+  return input.isNotEmpty;
 }
 
 class MyTextFormField extends StatelessWidget {

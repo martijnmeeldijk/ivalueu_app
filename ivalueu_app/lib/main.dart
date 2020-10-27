@@ -1,7 +1,6 @@
-import 'package:custom_navigator/custom_navigation.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
 import 'screens/app.dart';
 
 void main() {
@@ -18,6 +17,13 @@ class MyApp extends StatelessWidget {
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     return CupertinoApp(
       home: MyHomePage(),
+      theme: CupertinoThemeData(brightness: Brightness.light),
+      debugShowCheckedModeBanner: false,
+      localizationsDelegates: [
+        DefaultMaterialLocalizations.delegate,
+        DefaultCupertinoLocalizations.delegate,
+        DefaultWidgetsLocalizations.delegate,
+      ],
     );
   }
 }

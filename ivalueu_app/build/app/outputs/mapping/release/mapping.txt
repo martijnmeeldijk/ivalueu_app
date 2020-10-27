@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 1.5.64
-# min_api: 17
-# pg_map_id: f8e7354
+# min_api: 20
+# pg_map_id: 3ea5408
 android.support.customtabs.ICustomTabsCallback -> a.a.a.a:
     android.os.Bundle extraCallbackWithResult(java.lang.String,android.os.Bundle) -> a
     void onMessageChannelReady(android.os.Bundle) -> a
@@ -300,9 +300,9 @@ androidx.appcompat.app.AlertDialog$Builder -> androidx.appcompat.app.c$a:
     androidx.appcompat.app.AlertDialog$Builder setPositiveButton(java.lang.CharSequence,android.content.DialogInterface$OnClickListener) -> b
     androidx.appcompat.app.AlertDialog$Builder setTitle(java.lang.CharSequence) -> b
 androidx.appcompat.app.AppCompatActivity -> androidx.appcompat.app.d:
-    androidx.appcompat.app.AppCompatDelegate mDelegate -> q
-    int mThemeId -> r
-    android.content.res.Resources mResources -> s
+    android.content.res.Resources mResources -> t
+    androidx.appcompat.app.AppCompatDelegate mDelegate -> r
+    int mThemeId -> s
     void onCreateSupportNavigateUpTaskStack(androidx.core.app.TaskStackBuilder) -> a
     void onSupportActionModeStarted(androidx.appcompat.view.ActionMode) -> a
     androidx.appcompat.view.ActionMode onWindowStartingSupportActionMode(androidx.appcompat.view.ActionMode$Callback) -> a
@@ -3260,10 +3260,17 @@ androidx.core.app.ActivityCompat -> androidx.core.app.a:
     androidx.core.app.ActivityCompat$PermissionCompatDelegate sDelegate -> c
     void finishAffinity(android.app.Activity) -> a
     androidx.core.app.ActivityCompat$PermissionCompatDelegate getPermissionCompatDelegate() -> a
-androidx.core.app.ActivityCompat$OnRequestPermissionsResultCallback -> androidx.core.app.a$a:
-androidx.core.app.ActivityCompat$PermissionCompatDelegate -> androidx.core.app.a$b:
+    void requestPermissions(android.app.Activity,java.lang.String[],int) -> a
+androidx.core.app.ActivityCompat$1 -> androidx.core.app.a$a:
+    int val$requestCode -> d
+    android.app.Activity val$activity -> c
+    java.lang.String[] val$permissions -> b
+androidx.core.app.ActivityCompat$OnRequestPermissionsResultCallback -> androidx.core.app.a$b:
+androidx.core.app.ActivityCompat$PermissionCompatDelegate -> androidx.core.app.a$c:
     boolean onActivityResult(android.app.Activity,int,int,android.content.Intent) -> a
-androidx.core.app.ActivityCompat$RequestPermissionsRequestCodeValidator -> androidx.core.app.a$c:
+    boolean requestPermissions(android.app.Activity,java.lang.String[],int) -> a
+androidx.core.app.ActivityCompat$RequestPermissionsRequestCodeValidator -> androidx.core.app.a$d:
+    void validateRequestPermissionsRequestCode(int) -> a
 androidx.core.app.AppOpsManagerCompat -> androidx.core.app.b:
     int noteProxyOpNoThrow(android.content.Context,java.lang.String,java.lang.String) -> a
     java.lang.String permissionToOp(java.lang.String) -> a
@@ -3319,18 +3326,25 @@ androidx.core.content.ContextCompat -> b.e.d.a:
     android.graphics.drawable.Drawable getDrawable(android.content.Context,int) -> b
     java.io.File[] getExternalFilesDirs(android.content.Context,java.lang.String) -> b
 androidx.core.content.FileProvider -> b.e.d.b:
-    java.io.File DEVICE_ROOT -> b
-    java.util.HashMap sCache -> c
+    java.io.File DEVICE_ROOT -> d
+    androidx.core.content.FileProvider$PathStrategy mStrategy -> b
+    java.util.HashMap sCache -> e
+    java.lang.String[] COLUMNS -> c
     java.io.File buildPath(java.io.File,java.lang.String[]) -> a
+    java.lang.Object[] copyOf(java.lang.Object[],int) -> a
+    java.lang.String[] copyOf(java.lang.String[],int) -> a
     androidx.core.content.FileProvider$PathStrategy getPathStrategy(android.content.Context,java.lang.String) -> a
     android.net.Uri getUriForFile(android.content.Context,java.lang.String,java.io.File) -> a
+    int modeToMode(java.lang.String) -> a
     androidx.core.content.FileProvider$PathStrategy parsePathStrategy(android.content.Context,java.lang.String) -> b
 androidx.core.content.FileProvider$PathStrategy -> b.e.d.b$a:
+    java.io.File getFileForUri(android.net.Uri) -> a
     android.net.Uri getUriForFile(java.io.File) -> a
 androidx.core.content.FileProvider$SimplePathStrategy -> b.e.d.b$b:
     java.util.HashMap mRoots -> b
     java.lang.String mAuthority -> a
     void addRoot(java.lang.String,java.io.File) -> a
+    java.io.File getFileForUri(android.net.Uri) -> a
     android.net.Uri getUriForFile(java.io.File) -> a
 androidx.core.content.PermissionChecker -> b.e.d.c:
     int checkPermission(android.content.Context,java.lang.String,int,int,java.lang.String) -> a
@@ -4319,6 +4333,184 @@ androidx.customview.view.AbsSavedState -> b.g.a.a:
     android.os.Parcelable getSuperState() -> a
 androidx.customview.view.AbsSavedState$1 -> b.g.a.a$a:
 androidx.customview.view.AbsSavedState$2 -> b.g.a.a$b:
+androidx.exifinterface.media.ExifInterface -> b.h.a.a:
+    androidx.exifinterface.media.ExifInterface$ExifTag[] IFD_TIFF_TAGS -> T
+    int mThumbnailLength -> l
+    androidx.exifinterface.media.ExifInterface$ExifTag[] ORF_IMAGE_PROCESSING_TAGS -> b0
+    androidx.exifinterface.media.ExifInterface$ExifTag JPEG_INTERCHANGE_FORMAT_LENGTH_TAG -> g0
+    byte[] WEBP_CHUNK_TYPE_VP8L -> L
+    int[] IFD_FORMAT_BYTES_PER_FORMAT -> R
+    boolean mHasThumbnail -> i
+    byte[] mThumbnailBytes -> m
+    int mMimeType -> d
+    byte[] HEIF_BRAND_MIF1 -> y
+    java.util.HashSet sTagSetForCompatibility -> j0
+    androidx.exifinterface.media.ExifInterface$ExifTag[] IFD_THUMBNAIL_TAGS -> X
+    java.util.Set mAttributesOffsets -> g
+    java.nio.charset.Charset ASCII -> l0
+    java.util.HashMap[] mAttributes -> f
+    byte[] WEBP_SIGNATURE_1 -> G
+    java.lang.String mFilename -> a
+    byte[] PNG_SIGNATURE -> C
+    int mOrfThumbnailOffset -> q
+    int[] BITS_PER_SAMPLE_GREYSCALE_2 -> v
+    androidx.exifinterface.media.ExifInterface$ExifTag[] IFD_EXIF_TAGS -> U
+    boolean mAreThumbnailStripsConsecutive -> j
+    byte[] WEBP_CHUNK_TYPE_VP8 -> M
+    java.nio.ByteOrder mExifByteOrder -> h
+    byte[] HEIF_BRAND_HEIC -> z
+    androidx.exifinterface.media.ExifInterface$ExifTag TAG_RAF_IMAGE_SIZE -> Y
+    java.util.HashMap[] sExifTagMapsForReading -> h0
+    byte[] IDENTIFIER_XMP_APP1 -> n0
+    android.content.res.AssetManager$AssetInputStream mAssetInputStream -> c
+    byte[] WEBP_SIGNATURE_2 -> H
+    boolean mIsExifDataOnly -> e
+    byte[] PNG_CHUNK_TYPE_EXIF -> D
+    java.util.regex.Pattern sGpsTimestampPattern -> o0
+    int mOrfThumbnailLength -> r
+    androidx.exifinterface.media.ExifInterface$ExifTag JPEG_INTERCHANGE_FORMAT_TAG -> f0
+    int mThumbnailCompression -> n
+    androidx.exifinterface.media.ExifInterface$ExifTag[] ORF_CAMERA_SETTINGS_TAGS -> a0
+    byte[] WEBP_CHUNK_TYPE_ANIM -> N
+    int[] BITS_PER_SAMPLE_RGB -> u
+    androidx.exifinterface.media.ExifInterface$ExifTag[] ORF_MAKER_NOTE_TAGS -> Z
+    byte[] JPEG_SIGNATURE -> w
+    androidx.exifinterface.media.ExifInterface$ExifTag[] IFD_GPS_TAGS -> V
+    java.util.HashMap sExifPointerTagMap -> k0
+    boolean mXmpIsFromSeparateMarker -> s
+    byte[] ORF_MAKER_NOTE_HEADER_1 -> A
+    java.io.FileDescriptor mSeekableFileDescriptor -> b
+    byte[] WEBP_CHUNK_TYPE_EXIF -> I
+    java.lang.String[] IFD_FORMAT_NAMES -> Q
+    androidx.exifinterface.media.ExifInterface$ExifTag[] PEF_TAGS -> c0
+    byte[] PNG_CHUNK_TYPE_IHDR -> E
+    androidx.exifinterface.media.ExifInterface$ExifTag[] EXIF_POINTER_TAGS -> e0
+    byte[] WEBP_CHUNK_TYPE_ANMF -> O
+    int mOffsetToExifData -> o
+    byte[] WEBP_CHUNK_TYPE_VP8X -> K
+    int mThumbnailOffset -> k
+    byte[] HEIF_TYPE_FTYP -> x
+    byte[] EXIF_ASCII_PREFIX -> S
+    androidx.exifinterface.media.ExifInterface$ExifTag[] IFD_INTEROPERABILITY_TAGS -> W
+    boolean DEBUG -> t
+    byte[] ORF_MAKER_NOTE_HEADER_2 -> B
+    java.util.HashMap[] sExifTagMapsForWriting -> i0
+    java.text.SimpleDateFormat sFormatter -> P
+    byte[] WEBP_VP8_SIGNATURE -> J
+    byte[] IDENTIFIER_EXIF_APP1 -> m0
+    byte[] PNG_CHUNK_TYPE_IEND -> F
+    androidx.exifinterface.media.ExifInterface$ExifTag[][] EXIF_TAGS -> d0
+    int mOrfMakerNoteOffset -> p
+    java.lang.String byteArrayToHexString(byte[]) -> a
+    void closeFileDescriptor(java.io.FileDescriptor) -> a
+    void closeQuietly(java.io.Closeable) -> a
+    long[] convertToLongArray(java.lang.Object) -> a
+    int copy(java.io.InputStream,java.io.OutputStream) -> a
+    void copy(java.io.InputStream,java.io.OutputStream,int) -> a
+    void copyChunksUpToGivenChunkType(androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream,androidx.exifinterface.media.ExifInterface$ByteOrderedDataOutputStream,byte[],byte[]) -> a
+    void copyWebPChunk(androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream,androidx.exifinterface.media.ExifInterface$ByteOrderedDataOutputStream,byte[]) -> a
+    java.lang.String getAttribute(java.lang.String) -> a
+    void getHeifAttributes(androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream) -> a
+    void getJpegAttributes(androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream,int,int) -> a
+    int getMimeType(java.io.BufferedInputStream) -> a
+    byte[] getThumbnail() -> a
+    void handleThumbnailFromJfif(androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream,java.util.HashMap) -> a
+    boolean isSupportedDataType(java.util.HashMap) -> a
+    void loadAttributes(java.io.InputStream) -> a
+    void parseTiffHeaders(androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream,int) -> a
+    void readExifSegment(byte[],int) -> a
+    void setAttribute(java.lang.String,java.lang.String) -> a
+    boolean startsWith(byte[],byte[]) -> a
+    void swapBasedOnImageSize(int,int) -> a
+    int writeExifSegment(androidx.exifinterface.media.ExifInterface$ByteOrderedDataOutputStream) -> a
+    androidx.exifinterface.media.ExifInterface$ExifAttribute getExifAttribute(java.lang.String) -> b
+    void getOrfAttributes(androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream) -> b
+    byte[] getThumbnailBytes() -> b
+    void handleThumbnailFromStrips(androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream,java.util.HashMap) -> b
+    boolean isHeifFormat(byte[]) -> b
+    boolean isSeekableFD(java.io.FileDescriptor) -> b
+    boolean isThumbnail(java.util.HashMap) -> b
+    void readImageFileDirectory(androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream,int) -> b
+    void saveJpegAttributes(java.io.InputStream,java.io.OutputStream) -> b
+    void getPngAttributes(androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream) -> c
+    android.util.Pair guessDataFormat(java.lang.String) -> c
+    boolean isJpegFormat(byte[]) -> c
+    void retrieveJpegImageSize(androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream,int) -> c
+    void saveAttributes() -> c
+    void savePngAttributes(java.io.InputStream,java.io.OutputStream) -> c
+    void addDefaultValuesForCompatibility() -> d
+    void getRafAttributes(androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream) -> d
+    void initForFilename(java.lang.String) -> d
+    boolean isOrfFormat(byte[]) -> d
+    void saveWebpAttributes(java.io.InputStream,java.io.OutputStream) -> d
+    void updateImageSizeValues(androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream,int) -> d
+    void getRawAttributes(androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream) -> e
+    boolean isPngFormat(byte[]) -> e
+    boolean isSupportedFormatForSavingAttributes() -> e
+    void removeAttribute(java.lang.String) -> e
+    void getRw2Attributes(androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream) -> f
+    boolean isRafFormat(byte[]) -> f
+    void printAttributes() -> f
+    void getStandaloneAttributes(androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream) -> g
+    boolean isRw2Format(byte[]) -> g
+    void validateImages() -> g
+    void getWebpAttributes(androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream) -> h
+    boolean isWebpFormat(byte[]) -> h
+    java.nio.ByteOrder readByteOrder(androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream) -> i
+    void setThumbnailData(androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream) -> j
+androidx.exifinterface.media.ExifInterface$1 -> b.h.a.a$a:
+    androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream val$in -> c
+    long mPosition -> b
+androidx.exifinterface.media.ExifInterface$ByteOrderedDataInputStream -> b.h.a.a$b:
+    java.io.DataInputStream mDataInputStream -> b
+    java.nio.ByteOrder BIG_ENDIAN -> g
+    int mLength -> d
+    java.nio.ByteOrder LITTLE_ENDIAN -> f
+    int mPosition -> e
+    java.nio.ByteOrder mByteOrder -> c
+    void setByteOrder(java.nio.ByteOrder) -> a
+    void seek(long) -> f
+    int getLength() -> j
+    int peek() -> k
+    long readUnsignedInt() -> l
+androidx.exifinterface.media.ExifInterface$ByteOrderedDataOutputStream -> b.h.a.a$c:
+    java.io.OutputStream mOutputStream -> b
+    java.nio.ByteOrder mByteOrder -> c
+    void setByteOrder(java.nio.ByteOrder) -> a
+    void writeShort(short) -> a
+    void writeUnsignedShort(int) -> a
+    void writeUnsignedInt(long) -> f
+androidx.exifinterface.media.ExifInterface$ExifAttribute -> b.h.a.a$d:
+    long bytesOffset -> c
+    int numberOfComponents -> b
+    byte[] bytes -> d
+    int format -> a
+    androidx.exifinterface.media.ExifInterface$ExifAttribute createByte(java.lang.String) -> a
+    androidx.exifinterface.media.ExifInterface$ExifAttribute createDouble(double[],java.nio.ByteOrder) -> a
+    androidx.exifinterface.media.ExifInterface$ExifAttribute createSLong(int[],java.nio.ByteOrder) -> a
+    androidx.exifinterface.media.ExifInterface$ExifAttribute createSRational(androidx.exifinterface.media.ExifInterface$Rational[],java.nio.ByteOrder) -> a
+    androidx.exifinterface.media.ExifInterface$ExifAttribute createULong(long,java.nio.ByteOrder) -> a
+    androidx.exifinterface.media.ExifInterface$ExifAttribute createULong(long[],java.nio.ByteOrder) -> a
+    androidx.exifinterface.media.ExifInterface$ExifAttribute createURational(androidx.exifinterface.media.ExifInterface$Rational,java.nio.ByteOrder) -> a
+    androidx.exifinterface.media.ExifInterface$ExifAttribute createUShort(int,java.nio.ByteOrder) -> a
+    double getDoubleValue(java.nio.ByteOrder) -> a
+    int size() -> a
+    androidx.exifinterface.media.ExifInterface$ExifAttribute createString(java.lang.String) -> b
+    androidx.exifinterface.media.ExifInterface$ExifAttribute createURational(androidx.exifinterface.media.ExifInterface$Rational[],java.nio.ByteOrder) -> b
+    androidx.exifinterface.media.ExifInterface$ExifAttribute createUShort(int[],java.nio.ByteOrder) -> b
+    int getIntValue(java.nio.ByteOrder) -> b
+    java.lang.String getStringValue(java.nio.ByteOrder) -> c
+    java.lang.Object getValue(java.nio.ByteOrder) -> d
+androidx.exifinterface.media.ExifInterface$ExifTag -> b.h.a.a$e:
+    int secondaryFormat -> d
+    java.lang.String name -> b
+    int primaryFormat -> c
+    int number -> a
+    boolean isFormatCompatible(int) -> a
+androidx.exifinterface.media.ExifInterface$Rational -> b.h.a.a$f:
+    long denominator -> b
+    long numerator -> a
+    double calculate() -> a
 androidx.fragment.app.BackStackRecord -> androidx.fragment.app.a:
     androidx.fragment.app.FragmentManagerImpl mManager -> r
     int mIndex -> t
@@ -4554,20 +4746,22 @@ androidx.fragment.app.Fragment$OnStartEnterTransitionListener -> androidx.fragme
     void onStartEnterTransition() -> a
     void startListening() -> b
 androidx.fragment.app.FragmentActivity -> androidx.fragment.app.c:
-    boolean mStartedIntentSenderFromFragment -> m
+    boolean mRequestedPermissionsFromFragment -> m
     androidx.fragment.app.FragmentController mFragments -> h
-    boolean mStartedActivityFromFragment -> n
-    int mNextCandidateRequestIndex -> o
+    boolean mStartedIntentSenderFromFragment -> n
+    boolean mStartedActivityFromFragment -> o
     boolean mCreated -> j
     androidx.lifecycle.LifecycleRegistry mFragmentLifecycleRegistry -> i
     boolean mResumed -> k
+    androidx.collection.SparseArrayCompat mPendingFragmentActivityResults -> q
     boolean mStopped -> l
-    androidx.collection.SparseArrayCompat mPendingFragmentActivityResults -> p
-    void checkForValidRequestCode(int) -> a
+    int mNextCandidateRequestIndex -> p
     android.view.View dispatchFragmentsOnCreateView(android.view.View,java.lang.String,android.content.Context,android.util.AttributeSet) -> a
     boolean markState(androidx.fragment.app.FragmentManager,androidx.lifecycle.Lifecycle$State) -> a
     void onAttachFragment(androidx.fragment.app.Fragment) -> a
     boolean onPrepareOptionsPanel(android.view.View,android.view.Menu) -> a
+    void validateRequestPermissionsRequestCode(int) -> a
+    void checkForValidRequestCode(int) -> b
     androidx.fragment.app.FragmentManager getSupportFragmentManager() -> f
     void onResumeFragments() -> h
     void supportInvalidateOptionsMenu() -> i
@@ -5091,13 +5285,13 @@ androidx.fragment.app.FragmentViewLifecycleOwner -> androidx.fragment.app.q:
     void initialize() -> b
     boolean isInitialized() -> c
 androidx.fragment.app.SuperNotCalledException -> androidx.fragment.app.r:
-androidx.interpolator.view.animation.FastOutLinearInInterpolator -> b.h.a.a.a:
+androidx.interpolator.view.animation.FastOutLinearInInterpolator -> b.i.a.a.a:
     float[] VALUES -> c
-androidx.interpolator.view.animation.FastOutSlowInInterpolator -> b.h.a.a.b:
+androidx.interpolator.view.animation.FastOutSlowInInterpolator -> b.i.a.a.b:
     float[] VALUES -> c
-androidx.interpolator.view.animation.LinearOutSlowInInterpolator -> b.h.a.a.c:
+androidx.interpolator.view.animation.LinearOutSlowInInterpolator -> b.i.a.a.c:
     float[] VALUES -> c
-androidx.interpolator.view.animation.LookupTableInterpolator -> b.h.a.a.d:
+androidx.interpolator.view.animation.LookupTableInterpolator -> b.i.a.a.d:
     float mStepSize -> b
     float[] mValues -> a
 androidx.lifecycle.ClassesInfoCache -> androidx.lifecycle.a:
@@ -5121,7 +5315,8 @@ androidx.lifecycle.ClassesInfoCache$MethodReference -> androidx.lifecycle.a$b:
 androidx.lifecycle.CompositeGeneratedAdaptersObserver -> androidx.lifecycle.CompositeGeneratedAdaptersObserver:
     androidx.lifecycle.GeneratedAdapter[] mGeneratedAdapters -> a
     void onStateChanged(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle$Event) -> a
-androidx.lifecycle.FullLifecycleObserver -> androidx.lifecycle.b:
+androidx.lifecycle.DefaultLifecycleObserver -> androidx.lifecycle.b:
+androidx.lifecycle.FullLifecycleObserver -> androidx.lifecycle.c:
     void onResume(androidx.lifecycle.LifecycleOwner) -> a
     void onDestroy(androidx.lifecycle.LifecycleOwner) -> b
     void onCreate(androidx.lifecycle.LifecycleOwner) -> c
@@ -5134,15 +5329,15 @@ androidx.lifecycle.FullLifecycleObserverAdapter -> androidx.lifecycle.FullLifecy
     void onStateChanged(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle$Event) -> a
 androidx.lifecycle.FullLifecycleObserverAdapter$1 -> androidx.lifecycle.FullLifecycleObserverAdapter$a:
     int[] $SwitchMap$androidx$lifecycle$Lifecycle$Event -> a
-androidx.lifecycle.GeneratedAdapter -> androidx.lifecycle.c:
+androidx.lifecycle.GeneratedAdapter -> androidx.lifecycle.d:
     void callMethods(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle$Event,boolean,androidx.lifecycle.MethodCallsLogger) -> a
-androidx.lifecycle.GenericLifecycleObserver -> androidx.lifecycle.d:
-androidx.lifecycle.Lifecycle -> androidx.lifecycle.e:
+androidx.lifecycle.GenericLifecycleObserver -> androidx.lifecycle.e:
+androidx.lifecycle.Lifecycle -> androidx.lifecycle.f:
     void addObserver(androidx.lifecycle.LifecycleObserver) -> a
     androidx.lifecycle.Lifecycle$State getCurrentState() -> a
     void removeObserver(androidx.lifecycle.LifecycleObserver) -> b
-androidx.lifecycle.Lifecycle$Event -> androidx.lifecycle.e$a:
-androidx.lifecycle.Lifecycle$State -> androidx.lifecycle.e$b:
+androidx.lifecycle.Lifecycle$Event -> androidx.lifecycle.f$a:
+androidx.lifecycle.Lifecycle$State -> androidx.lifecycle.f$b:
     androidx.lifecycle.Lifecycle$State DESTROYED -> b
     androidx.lifecycle.Lifecycle$State[] $VALUES -> g
     androidx.lifecycle.Lifecycle$State RESUMED -> f
@@ -5150,12 +5345,12 @@ androidx.lifecycle.Lifecycle$State -> androidx.lifecycle.e$b:
     androidx.lifecycle.Lifecycle$State CREATED -> d
     androidx.lifecycle.Lifecycle$State INITIALIZED -> c
     boolean isAtLeast(androidx.lifecycle.Lifecycle$State) -> a
-androidx.lifecycle.LifecycleEventObserver -> androidx.lifecycle.f:
+androidx.lifecycle.LifecycleEventObserver -> androidx.lifecycle.g:
     void onStateChanged(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle$Event) -> a
-androidx.lifecycle.LifecycleObserver -> androidx.lifecycle.g:
-androidx.lifecycle.LifecycleOwner -> androidx.lifecycle.h:
+androidx.lifecycle.LifecycleObserver -> androidx.lifecycle.h:
+androidx.lifecycle.LifecycleOwner -> androidx.lifecycle.i:
     androidx.lifecycle.Lifecycle getLifecycle() -> a
-androidx.lifecycle.LifecycleRegistry -> androidx.lifecycle.i:
+androidx.lifecycle.LifecycleRegistry -> androidx.lifecycle.j:
     androidx.lifecycle.Lifecycle$State mState -> b
     androidx.arch.core.internal.FastSafeIterableMap mObserverMap -> a
     boolean mHandlingEvent -> e
@@ -5181,16 +5376,16 @@ androidx.lifecycle.LifecycleRegistry -> androidx.lifecycle.i:
     void sync() -> d
     void pushParentState(androidx.lifecycle.Lifecycle$State) -> e
     androidx.lifecycle.Lifecycle$Event upEvent(androidx.lifecycle.Lifecycle$State) -> f
-androidx.lifecycle.LifecycleRegistry$1 -> androidx.lifecycle.i$a:
+androidx.lifecycle.LifecycleRegistry$1 -> androidx.lifecycle.j$a:
     int[] $SwitchMap$androidx$lifecycle$Lifecycle$State -> b
     int[] $SwitchMap$androidx$lifecycle$Lifecycle$Event -> a
-androidx.lifecycle.LifecycleRegistry$ObserverWithState -> androidx.lifecycle.i$b:
+androidx.lifecycle.LifecycleRegistry$ObserverWithState -> androidx.lifecycle.j$b:
     androidx.lifecycle.Lifecycle$State mState -> a
     androidx.lifecycle.LifecycleEventObserver mLifecycleObserver -> b
     void dispatchEvent(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle$Event) -> a
-androidx.lifecycle.LifecycleRegistryOwner -> androidx.lifecycle.j:
+androidx.lifecycle.LifecycleRegistryOwner -> androidx.lifecycle.k:
     androidx.lifecycle.LifecycleRegistry getLifecycle() -> a
-androidx.lifecycle.Lifecycling -> androidx.lifecycle.k:
+androidx.lifecycle.Lifecycling -> androidx.lifecycle.l:
     java.util.Map sCallbackCache -> a
     java.util.Map sClassToAdapters -> b
     androidx.lifecycle.GeneratedAdapter createGeneratedAdapter(java.lang.reflect.Constructor,java.lang.Object) -> a
@@ -5239,17 +5434,17 @@ androidx.lifecycle.LiveData$ObserverWrapper -> androidx.lifecycle.LiveData$b:
     void detachObserver() -> a
     boolean isAttachedTo(androidx.lifecycle.LifecycleOwner) -> a
     boolean shouldBeActive() -> b
-androidx.lifecycle.MethodCallsLogger -> androidx.lifecycle.l:
-androidx.lifecycle.MutableLiveData -> androidx.lifecycle.m:
+androidx.lifecycle.MethodCallsLogger -> androidx.lifecycle.m:
+androidx.lifecycle.MutableLiveData -> androidx.lifecycle.n:
     void setValue(java.lang.Object) -> a
-androidx.lifecycle.Observer -> androidx.lifecycle.n:
+androidx.lifecycle.Observer -> androidx.lifecycle.o:
     void onChanged(java.lang.Object) -> a
-androidx.lifecycle.OnLifecycleEvent -> androidx.lifecycle.o:
+androidx.lifecycle.OnLifecycleEvent -> androidx.lifecycle.p:
 androidx.lifecycle.ReflectiveGenericLifecycleObserver -> androidx.lifecycle.ReflectiveGenericLifecycleObserver:
     androidx.lifecycle.ClassesInfoCache$CallbackInfo mInfo -> b
     java.lang.Object mWrapped -> a
     void onStateChanged(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle$Event) -> a
-androidx.lifecycle.ReportFragment -> androidx.lifecycle.p:
+androidx.lifecycle.ReportFragment -> androidx.lifecycle.q:
     androidx.lifecycle.ReportFragment$ActivityInitializationListener mProcessListener -> b
     void dispatch(android.app.Activity,androidx.lifecycle.Lifecycle$Event) -> a
     void dispatch(androidx.lifecycle.Lifecycle$Event) -> a
@@ -5257,47 +5452,47 @@ androidx.lifecycle.ReportFragment -> androidx.lifecycle.p:
     void injectIfNeededIn(android.app.Activity) -> a
     void dispatchResume(androidx.lifecycle.ReportFragment$ActivityInitializationListener) -> b
     void dispatchStart(androidx.lifecycle.ReportFragment$ActivityInitializationListener) -> c
-androidx.lifecycle.ReportFragment$ActivityInitializationListener -> androidx.lifecycle.p$a:
+androidx.lifecycle.ReportFragment$ActivityInitializationListener -> androidx.lifecycle.q$a:
     void onCreate() -> a
     void onResume() -> b
     void onStart() -> c
-androidx.lifecycle.ReportFragment$LifecycleCallbacks -> androidx.lifecycle.p$b:
+androidx.lifecycle.ReportFragment$LifecycleCallbacks -> androidx.lifecycle.q$b:
 androidx.lifecycle.SingleGeneratedAdapterObserver -> androidx.lifecycle.SingleGeneratedAdapterObserver:
     androidx.lifecycle.GeneratedAdapter mGeneratedAdapter -> a
     void onStateChanged(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle$Event) -> a
-androidx.lifecycle.ViewModel -> androidx.lifecycle.q:
+androidx.lifecycle.ViewModel -> androidx.lifecycle.r:
     java.util.Map mBagOfTags -> a
     void clear() -> a
     void closeWithRuntimeException(java.lang.Object) -> a
     void onCleared() -> b
-androidx.lifecycle.ViewModelProvider -> androidx.lifecycle.r:
+androidx.lifecycle.ViewModelProvider -> androidx.lifecycle.s:
     androidx.lifecycle.ViewModelStore mViewModelStore -> b
     androidx.lifecycle.ViewModelProvider$Factory mFactory -> a
     androidx.lifecycle.ViewModel get(java.lang.Class) -> a
     androidx.lifecycle.ViewModel get(java.lang.String,java.lang.Class) -> a
-androidx.lifecycle.ViewModelProvider$Factory -> androidx.lifecycle.r$a:
+androidx.lifecycle.ViewModelProvider$Factory -> androidx.lifecycle.s$a:
     androidx.lifecycle.ViewModel create(java.lang.Class) -> a
-androidx.lifecycle.ViewModelProvider$KeyedFactory -> androidx.lifecycle.r$b:
+androidx.lifecycle.ViewModelProvider$KeyedFactory -> androidx.lifecycle.s$b:
     androidx.lifecycle.ViewModel create(java.lang.Class) -> a
     androidx.lifecycle.ViewModel create(java.lang.String,java.lang.Class) -> a
-androidx.lifecycle.ViewModelStore -> androidx.lifecycle.s:
+androidx.lifecycle.ViewModelStore -> androidx.lifecycle.t:
     java.util.HashMap mMap -> a
     void clear() -> a
     androidx.lifecycle.ViewModel get(java.lang.String) -> a
     void put(java.lang.String,androidx.lifecycle.ViewModel) -> a
-androidx.lifecycle.ViewModelStoreOwner -> androidx.lifecycle.t:
+androidx.lifecycle.ViewModelStoreOwner -> androidx.lifecycle.u:
     androidx.lifecycle.ViewModelStore getViewModelStore() -> b
-androidx.loader.app.LoaderManager -> b.i.a.a:
+androidx.loader.app.LoaderManager -> b.j.a.a:
     void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]) -> a
     androidx.loader.app.LoaderManager getInstance(androidx.lifecycle.LifecycleOwner) -> a
     void markForRedelivery() -> a
-androidx.loader.app.LoaderManagerImpl -> b.i.a.b:
+androidx.loader.app.LoaderManagerImpl -> b.j.a.b:
     androidx.lifecycle.LifecycleOwner mLifecycleOwner -> a
     androidx.loader.app.LoaderManagerImpl$LoaderViewModel mLoaderViewModel -> b
     boolean DEBUG -> c
     void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]) -> a
     void markForRedelivery() -> a
-androidx.loader.app.LoaderManagerImpl$LoaderInfo -> b.i.a.b$a:
+androidx.loader.app.LoaderManagerImpl$LoaderInfo -> b.j.a.b$a:
     androidx.loader.content.Loader mLoader -> l
     androidx.lifecycle.LifecycleOwner mLifecycleOwner -> m
     int mId -> j
@@ -5311,23 +5506,23 @@ androidx.loader.app.LoaderManagerImpl$LoaderInfo -> b.i.a.b$a:
     void setValue(java.lang.Object) -> a
     void onInactive() -> b
     void markForRedelivery() -> c
-androidx.loader.app.LoaderManagerImpl$LoaderObserver -> b.i.a.b$b:
-androidx.loader.app.LoaderManagerImpl$LoaderViewModel -> b.i.a.b$c:
+androidx.loader.app.LoaderManagerImpl$LoaderObserver -> b.j.a.b$b:
+androidx.loader.app.LoaderManagerImpl$LoaderViewModel -> b.j.a.b$c:
     androidx.lifecycle.ViewModelProvider$Factory FACTORY -> c
     androidx.collection.SparseArrayCompat mLoaders -> b
     void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]) -> a
     androidx.loader.app.LoaderManagerImpl$LoaderViewModel getInstance(androidx.lifecycle.ViewModelStore) -> a
     void onCleared() -> b
     void markForRedelivery() -> c
-androidx.loader.app.LoaderManagerImpl$LoaderViewModel$1 -> b.i.a.b$c$a:
+androidx.loader.app.LoaderManagerImpl$LoaderViewModel$1 -> b.j.a.b$c$a:
     androidx.lifecycle.ViewModel create(java.lang.Class) -> a
-androidx.loader.content.Loader -> b.i.b.a:
+androidx.loader.content.Loader -> b.j.b.a:
     boolean cancelLoad() -> a
     void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]) -> a
     void reset() -> b
     void startLoading() -> c
     void stopLoading() -> d
-androidx.loader.content.Loader$OnLoadCompleteListener -> b.i.b.a$a:
+androidx.loader.content.Loader$OnLoadCompleteListener -> b.j.b.a$a:
 androidx.savedstate.Recreator -> androidx.savedstate.Recreator:
     androidx.savedstate.SavedStateRegistryOwner mOwner -> a
     void onStateChanged(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle$Event) -> a
@@ -5356,7 +5551,7 @@ androidx.savedstate.SavedStateRegistryController -> androidx.savedstate.a:
     void performSave(android.os.Bundle) -> b
 androidx.savedstate.SavedStateRegistryOwner -> androidx.savedstate.b:
     androidx.savedstate.SavedStateRegistry getSavedStateRegistry() -> g
-androidx.vectordrawable.graphics.drawable.AndroidResources -> b.j.a.a.a:
+androidx.vectordrawable.graphics.drawable.AndroidResources -> b.k.a.a.a:
     int[] STYLEABLE_ANIMATED_VECTOR_DRAWABLE_TARGET -> f
     int[] STYLEABLE_ANIMATOR -> g
     int[] STYLEABLE_ANIMATOR_SET -> h
@@ -5369,8 +5564,8 @@ androidx.vectordrawable.graphics.drawable.AndroidResources -> b.j.a.a.a:
     int[] STYLEABLE_KEYFRAME -> j
     int[] STYLEABLE_PROPERTY_ANIMATOR -> k
     int[] STYLEABLE_PATH_INTERPOLATOR -> l
-androidx.vectordrawable.graphics.drawable.Animatable2Compat -> b.j.a.a.b:
-androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat -> b.j.a.a.c:
+androidx.vectordrawable.graphics.drawable.Animatable2Compat -> b.k.a.a.b:
+androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat -> b.k.a.a.c:
     android.graphics.drawable.Drawable$Callback mCallback -> f
     android.animation.ArgbEvaluator mArgbEvaluator -> e
     androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState mAnimatedVectorState -> c
@@ -5378,21 +5573,21 @@ androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat -> b.j.a.
     androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat createFromXmlInner(android.content.Context,android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme) -> a
     void setupAnimatorsForTarget(java.lang.String,android.animation.Animator) -> a
     void setupColorAnimator(android.animation.Animator) -> a
-androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat$1 -> b.j.a.a.c$a:
+androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat$1 -> b.k.a.a.c$a:
     androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat this$0 -> b
-androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState -> b.j.a.a.c$b:
+androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState -> b.k.a.a.c$b:
     androidx.vectordrawable.graphics.drawable.VectorDrawableCompat mVectorDrawable -> b
     android.animation.AnimatorSet mAnimatorSet -> c
     androidx.collection.ArrayMap mTargetNameMap -> e
     java.util.ArrayList mAnimators -> d
     int mChangingConfigurations -> a
     void setupAnimatorSet() -> a
-androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat$AnimatedVectorDrawableDelegateState -> b.j.a.a.c$c:
+androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat$AnimatedVectorDrawableDelegateState -> b.k.a.a.c$c:
     android.graphics.drawable.Drawable$ConstantState mDelegateState -> a
-androidx.vectordrawable.graphics.drawable.AnimationUtilsCompat -> b.j.a.a.d:
+androidx.vectordrawable.graphics.drawable.AnimationUtilsCompat -> b.k.a.a.d:
     android.view.animation.Interpolator createInterpolatorFromXml(android.content.Context,android.content.res.Resources,android.content.res.Resources$Theme,org.xmlpull.v1.XmlPullParser) -> a
     android.view.animation.Interpolator loadInterpolator(android.content.Context,int) -> a
-androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat -> b.j.a.a.e:
+androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat -> b.k.a.a.e:
     android.animation.Animator createAnimatorFromXml(android.content.Context,android.content.res.Resources,android.content.res.Resources$Theme,org.xmlpull.v1.XmlPullParser,float) -> a
     android.animation.Animator createAnimatorFromXml(android.content.Context,android.content.res.Resources,android.content.res.Resources$Theme,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.animation.AnimatorSet,int,float) -> a
     android.animation.Keyframe createNewKeyframe(android.animation.Keyframe,float) -> a
@@ -5412,22 +5607,22 @@ androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat -> b.j.a.a.e:
     void parseAnimatorFromTypeArray(android.animation.ValueAnimator,android.content.res.TypedArray,android.content.res.TypedArray,float,org.xmlpull.v1.XmlPullParser) -> a
     void setupObjectAnimator(android.animation.ValueAnimator,android.content.res.TypedArray,int,float,org.xmlpull.v1.XmlPullParser) -> a
     void setupPathMotion(android.graphics.Path,android.animation.ObjectAnimator,float,java.lang.String,java.lang.String) -> a
-androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat$PathDataEvaluator -> b.j.a.a.e$a:
+androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat$PathDataEvaluator -> b.k.a.a.e$a:
     androidx.core.graphics.PathParser$PathDataNode[] mNodeArray -> a
     androidx.core.graphics.PathParser$PathDataNode[] evaluate(float,androidx.core.graphics.PathParser$PathDataNode[],androidx.core.graphics.PathParser$PathDataNode[]) -> a
-androidx.vectordrawable.graphics.drawable.ArgbEvaluator -> b.j.a.a.f:
+androidx.vectordrawable.graphics.drawable.ArgbEvaluator -> b.k.a.a.f:
     androidx.vectordrawable.graphics.drawable.ArgbEvaluator sInstance -> a
     androidx.vectordrawable.graphics.drawable.ArgbEvaluator getInstance() -> a
-androidx.vectordrawable.graphics.drawable.PathInterpolatorCompat -> b.j.a.a.g:
+androidx.vectordrawable.graphics.drawable.PathInterpolatorCompat -> b.k.a.a.g:
     float[] mX -> a
     float[] mY -> b
     void initCubic(float,float,float,float) -> a
     void initPath(android.graphics.Path) -> a
     void initQuad(float,float) -> a
     void parseInterpolatorFromTypeArray(android.content.res.TypedArray,org.xmlpull.v1.XmlPullParser) -> a
-androidx.vectordrawable.graphics.drawable.VectorDrawableCommon -> b.j.a.a.h:
+androidx.vectordrawable.graphics.drawable.VectorDrawableCommon -> b.k.a.a.h:
     android.graphics.drawable.Drawable mDelegateDrawable -> b
-androidx.vectordrawable.graphics.drawable.VectorDrawableCompat -> b.j.a.a.i:
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat -> b.k.a.a.i:
     androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VectorDrawableCompatState mVectorState -> c
     android.graphics.PorterDuff$Mode DEFAULT_TINT_MODE -> k
     android.graphics.PorterDuffColorFilter mTintFilter -> d
@@ -5446,12 +5641,12 @@ androidx.vectordrawable.graphics.drawable.VectorDrawableCompat -> b.j.a.a.i:
     void setAllowCaching(boolean) -> a
     void updateStateFromTypedArray(android.content.res.TypedArray,org.xmlpull.v1.XmlPullParser) -> a
     android.graphics.PorterDuffColorFilter updateTintFilter(android.graphics.PorterDuffColorFilter,android.content.res.ColorStateList,android.graphics.PorterDuff$Mode) -> a
-androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$1 -> b.j.a.a.i$a:
-androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VClipPath -> b.j.a.a.i$b:
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$1 -> b.k.a.a.i$a:
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VClipPath -> b.k.a.a.i$b:
     void inflate(android.content.res.Resources,android.util.AttributeSet,android.content.res.Resources$Theme,org.xmlpull.v1.XmlPullParser) -> a
     void updateStateFromTypedArray(android.content.res.TypedArray) -> a
     boolean isClipPath() -> b
-androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath -> b.j.a.a.i$c:
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath -> b.k.a.a.i$c:
     float mTrimPathEnd -> l
     float mTrimPathStart -> k
     float mFillAlpha -> j
@@ -5471,7 +5666,7 @@ androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath -> b.j.
     boolean isStateful() -> a
     boolean onStateChanged(int[]) -> a
     void updateStateFromTypedArray(android.content.res.TypedArray,org.xmlpull.v1.XmlPullParser,android.content.res.Resources$Theme) -> a
-androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup -> b.j.a.a.i$d:
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup -> b.k.a.a.i$d:
     android.graphics.Matrix mLocalMatrix -> j
     float mTranslateY -> i
     float mTranslateX -> h
@@ -5490,16 +5685,16 @@ androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup -> b.j.a.a
     boolean onStateChanged(int[]) -> a
     void updateStateFromTypedArray(android.content.res.TypedArray,org.xmlpull.v1.XmlPullParser) -> a
     void updateLocalMatrix() -> b
-androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VObject -> b.j.a.a.i$e:
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VObject -> b.k.a.a.i$e:
     boolean isStateful() -> a
     boolean onStateChanged(int[]) -> a
-androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPath -> b.j.a.a.i$f:
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPath -> b.k.a.a.i$f:
     androidx.core.graphics.PathParser$PathDataNode[] mNodes -> a
     java.lang.String mPathName -> b
     int mChangingConfigurations -> c
     void toPath(android.graphics.Path) -> a
     boolean isClipPath() -> b
-androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPathRenderer -> b.j.a.a.i$g:
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPathRenderer -> b.k.a.a.i$g:
     android.graphics.Path mPath -> a
     float mViewportHeight -> l
     float mViewportWidth -> k
@@ -5524,7 +5719,7 @@ androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPathRenderer -> 
     float getMatrixScale(android.graphics.Matrix) -> a
     boolean isStateful() -> a
     boolean onStateChanged(int[]) -> a
-androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VectorDrawableCompatState -> b.j.a.a.i$h:
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VectorDrawableCompatState -> b.k.a.a.i$h:
     android.content.res.ColorStateList mTint -> c
     boolean mCachedAutoMirrored -> j
     android.graphics.PorterDuff$Mode mCachedTintMode -> h
@@ -5547,7 +5742,7 @@ androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VectorDrawableCom
     boolean isStateful() -> c
     void updateCachedBitmap(int,int) -> c
     void updateCacheStates() -> d
-androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VectorDrawableDelegateState -> b.j.a.a.i$i:
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VectorDrawableDelegateState -> b.k.a.a.i$i:
     android.graphics.drawable.Drawable$ConstantState mDelegateState -> a
 androidx.versionedparcelable.ParcelImpl -> androidx.versionedparcelable.ParcelImpl:
     androidx.versionedparcelable.VersionedParcelable mParcel -> b
@@ -5622,7 +5817,7 @@ androidx.versionedparcelable.VersionedParcelParcel -> androidx.versionedparcelab
     android.os.Parcelable readParcelable() -> h
     java.lang.String readString() -> i
 androidx.versionedparcelable.VersionedParcelable -> androidx.versionedparcelable.c:
-androidx.webkit.WebViewCompat -> b.k.a:
+androidx.webkit.WebViewCompat -> b.l.a:
     org.chromium.support_lib_boundary.WebViewProviderBoundaryInterface createProvider(android.webkit.WebView) -> a
     android.content.pm.PackageInfo getCurrentWebViewPackage(android.content.Context) -> a
     androidx.webkit.internal.WebViewProviderFactory getFactory() -> a
@@ -5633,17 +5828,17 @@ androidx.webkit.WebViewCompat -> b.k.a:
     android.content.pm.PackageInfo getNotYetLoadedWebViewPackageInfo(android.content.Context) -> b
     androidx.webkit.internal.WebViewProviderAdapter getProvider(android.webkit.WebView) -> b
     android.net.Uri getSafeBrowsingPrivacyPolicyUrl() -> c
-androidx.webkit.WebViewFeature -> b.k.b:
+androidx.webkit.WebViewFeature -> b.l.b:
     boolean isFeatureSupported(java.lang.String) -> a
-androidx.webkit.WebViewRenderProcess -> b.k.c:
+androidx.webkit.WebViewRenderProcess -> b.l.c:
     boolean terminate() -> a
-androidx.webkit.WebViewRenderProcessClient -> b.k.d:
+androidx.webkit.WebViewRenderProcessClient -> b.l.d:
     void onRenderProcessResponsive(android.webkit.WebView,androidx.webkit.WebViewRenderProcess) -> a
     void onRenderProcessUnresponsive(android.webkit.WebView,androidx.webkit.WebViewRenderProcess) -> b
-androidx.webkit.internal.IncompatibleApkWebViewProviderFactory -> b.k.e.a:
+androidx.webkit.internal.IncompatibleApkWebViewProviderFactory -> b.l.e.a:
     java.lang.String[] EMPTY_STRING_ARRAY -> a
     java.lang.String[] getWebViewFeatures() -> a
-androidx.webkit.internal.WebViewFeatureInternal -> b.k.e.b:
+androidx.webkit.internal.WebViewFeatureInternal -> b.l.e.b:
     androidx.webkit.internal.WebViewFeatureInternal WEB_RESOURCE_ERROR_GET_DESCRIPTION -> w
     androidx.webkit.internal.WebViewFeatureInternal SAFE_BROWSING_HIT -> u
     androidx.webkit.internal.WebViewFeatureInternal SAFE_BROWSING_RESPONSE_BACK_TO_SAFETY -> y
@@ -5694,47 +5889,509 @@ androidx.webkit.internal.WebViewFeatureInternal -> b.k.e.b:
     boolean isSupportedByFramework() -> a
     boolean isSupportedByWebView() -> b
     java.lang.UnsupportedOperationException getUnsupportedOperationException() -> c
-androidx.webkit.internal.WebViewFeatureInternal$LAZY_HOLDER -> b.k.e.b$a:
+androidx.webkit.internal.WebViewFeatureInternal$LAZY_HOLDER -> b.l.e.b$a:
     java.util.Set WEBVIEW_APK_FEATURES -> a
-androidx.webkit.internal.WebViewGlueCommunicator -> b.k.e.c:
+androidx.webkit.internal.WebViewGlueCommunicator -> b.l.e.c:
     androidx.webkit.internal.WebViewProviderFactory createGlueProviderFactory() -> a
     java.lang.reflect.InvocationHandler fetchGlueProviderFactoryImpl() -> b
     androidx.webkit.internal.WebViewProviderFactory getFactory() -> c
     java.lang.ClassLoader getWebViewClassLoader() -> d
     java.lang.Object getWebViewProviderFactory() -> e
-androidx.webkit.internal.WebViewGlueCommunicator$LAZY_FACTORY_HOLDER -> b.k.e.c$a:
+androidx.webkit.internal.WebViewGlueCommunicator$LAZY_FACTORY_HOLDER -> b.l.e.c$a:
     androidx.webkit.internal.WebViewProviderFactory INSTANCE -> a
-androidx.webkit.internal.WebViewProviderAdapter -> b.k.e.d:
+androidx.webkit.internal.WebViewProviderAdapter -> b.l.e.d:
     org.chromium.support_lib_boundary.WebViewProviderBoundaryInterface mImpl -> a
     void setWebViewRenderProcessClient(java.util.concurrent.Executor,androidx.webkit.WebViewRenderProcessClient) -> a
-androidx.webkit.internal.WebViewProviderFactory -> b.k.e.e:
+androidx.webkit.internal.WebViewProviderFactory -> b.l.e.e:
     java.lang.String[] getWebViewFeatures() -> a
-androidx.webkit.internal.WebViewProviderFactoryAdapter -> b.k.e.f:
+androidx.webkit.internal.WebViewProviderFactoryAdapter -> b.l.e.f:
     org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface mImpl -> a
     java.lang.String[] getWebViewFeatures() -> a
-androidx.webkit.internal.WebViewRenderProcessClientAdapter -> b.k.e.g:
+androidx.webkit.internal.WebViewRenderProcessClientAdapter -> b.l.e.g:
     java.util.concurrent.Executor mExecutor -> a
     androidx.webkit.WebViewRenderProcessClient mWebViewRenderProcessClient -> b
     java.lang.String[] sSupportedFeatures -> c
-androidx.webkit.internal.WebViewRenderProcessClientAdapter$1 -> b.k.e.g$a:
+androidx.webkit.internal.WebViewRenderProcessClientAdapter$1 -> b.l.e.g$a:
     androidx.webkit.WebViewRenderProcess val$rendererObject -> d
     android.webkit.WebView val$view -> c
     androidx.webkit.WebViewRenderProcessClient val$client -> b
-androidx.webkit.internal.WebViewRenderProcessClientAdapter$2 -> b.k.e.g$b:
+androidx.webkit.internal.WebViewRenderProcessClientAdapter$2 -> b.l.e.g$b:
     androidx.webkit.WebViewRenderProcess val$rendererObject -> d
     android.webkit.WebView val$view -> c
     androidx.webkit.WebViewRenderProcessClient val$client -> b
-androidx.webkit.internal.WebViewRenderProcessClientFrameworkAdapter -> b.k.e.h:
+androidx.webkit.internal.WebViewRenderProcessClientFrameworkAdapter -> b.l.e.h:
     androidx.webkit.WebViewRenderProcessClient mWebViewRenderProcessClient -> a
-androidx.webkit.internal.WebViewRenderProcessImpl -> b.k.e.i:
+androidx.webkit.internal.WebViewRenderProcessImpl -> b.l.e.i:
     org.chromium.support_lib_boundary.WebViewRendererBoundaryInterface mBoundaryInterface -> a
     java.lang.ref.WeakReference mFrameworkObject -> b
     java.util.WeakHashMap sFrameworkMap -> c
     androidx.webkit.internal.WebViewRenderProcessImpl forFrameworkObject(android.webkit.WebViewRenderProcess) -> a
     androidx.webkit.internal.WebViewRenderProcessImpl forInvocationHandler(java.lang.reflect.InvocationHandler) -> a
     boolean terminate() -> a
-androidx.webkit.internal.WebViewRenderProcessImpl$1 -> b.k.e.i$a:
+androidx.webkit.internal.WebViewRenderProcessImpl$1 -> b.l.e.i$a:
     org.chromium.support_lib_boundary.WebViewRendererBoundaryInterface val$boundaryInterface -> a
+com.google.i18n.phonenumbers.AlternateFormatsCountryCodeSet -> c.a.a.a.a:
+    java.util.Set getCountryCodeSet() -> a
+com.google.i18n.phonenumbers.AsYouTypeFormatter -> c.a.a.a.b:
+    java.util.regex.Pattern NATIONAL_PREFIX_SEPARATORS_PATTERN -> w
+    int lastMatchPosition -> n
+    java.util.regex.Pattern ELIGIBLE_FORMAT_PATTERN -> v
+    java.util.regex.Pattern DIGIT_PATTERN -> x
+    boolean shouldAddSpaceAfterNationalPrefix -> p
+    boolean isExpectingCountryCallingCode -> i
+    java.lang.String defaultCountry -> k
+    java.util.List possibleFormats -> s
+    java.lang.StringBuilder nationalNumber -> r
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata defaultMetadata -> l
+    java.lang.String extractedNationalPrefix -> q
+    java.lang.StringBuilder prefixBeforeNationalNumber -> o
+    com.google.i18n.phonenumbers.internal.RegexCache regexCache -> t
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata currentMetadata -> m
+    java.lang.StringBuilder formattingTemplate -> b
+    boolean ableToFormat -> f
+    java.lang.String currentOutput -> a
+    boolean inputHasFormatting -> g
+    boolean isCompleteNumber -> h
+    com.google.i18n.phonenumbers.PhoneNumberUtil phoneUtil -> j
+    java.lang.String currentFormattingPattern -> c
+    java.lang.StringBuilder accruedInputWithoutFormatting -> e
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata EMPTY_METADATA -> u
+    java.lang.StringBuilder accruedInput -> d
+    java.lang.String appendNationalNumber(java.lang.String) -> a
+    java.lang.String attemptToFormatAccruedDigits() -> a
+    boolean createFormattingTemplate(com.google.i18n.phonenumbers.Phonemetadata$NumberFormat) -> a
+    java.lang.String getFormattingTemplate(java.lang.String,java.lang.String) -> a
+    java.lang.String inputDigit(char) -> a
+    java.lang.String inputDigitWithOptionToRememberPosition(char,boolean) -> a
+    void clear() -> b
+    void getAvailableFormats(java.lang.String) -> b
+    java.lang.String inputDigitHelper(char) -> b
+    char normalizeAndAccrueDigitsAndPlusSign(char,boolean) -> b
+    boolean ableToExtractLongerNdd() -> c
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata getMetadataForRegion(java.lang.String) -> c
+    boolean isDigitOrLeadingPlusSign(char) -> c
+    java.lang.String attemptToChooseFormattingPattern() -> d
+    void narrowDownPossibleFormats(java.lang.String) -> d
+    java.lang.String attemptToChoosePatternWithPrefixExtracted() -> e
+    boolean attemptToExtractCountryCallingCode() -> f
+    boolean attemptToExtractIdd() -> g
+    java.lang.String inputAccruedNationalNumber() -> h
+    boolean isNanpaNumberWithNationalPrefix() -> i
+    boolean maybeCreateNewTemplate() -> j
+    java.lang.String removeNationalPrefixFromNationalNumber() -> k
+com.google.i18n.phonenumbers.CountryCodeToRegionCodeMap -> c.a.a.a.c:
+    java.util.Map getCountryCodeToRegionCodeMap() -> a
+com.google.i18n.phonenumbers.MetadataLoader -> c.a.a.a.d:
+    java.io.InputStream loadMetadata(java.lang.String) -> a
+com.google.i18n.phonenumbers.MetadataManager -> c.a.a.a.e:
+    com.google.i18n.phonenumbers.MetadataLoader DEFAULT_METADATA_LOADER -> a
+    java.util.logging.Logger logger -> b
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata getMetadataFromMultiFilePrefix(java.lang.Object,java.util.concurrent.ConcurrentHashMap,java.lang.String,com.google.i18n.phonenumbers.MetadataLoader) -> a
+    java.util.List getMetadataFromSingleFileName(java.lang.String,com.google.i18n.phonenumbers.MetadataLoader) -> a
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadataCollection loadMetadataAndCloseInput(java.io.InputStream) -> a
+com.google.i18n.phonenumbers.MetadataManager$1 -> c.a.a.a.e$a:
+    java.io.InputStream loadMetadata(java.lang.String) -> a
+com.google.i18n.phonenumbers.MetadataSource -> c.a.a.a.f:
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata getMetadataForNonGeographicalRegion(int) -> a
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata getMetadataForRegion(java.lang.String) -> a
+com.google.i18n.phonenumbers.MultiFileMetadataSourceImpl -> c.a.a.a.g:
+    java.util.concurrent.ConcurrentHashMap nonGeographicalRegions -> d
+    java.util.concurrent.ConcurrentHashMap geographicalRegions -> c
+    com.google.i18n.phonenumbers.MetadataLoader metadataLoader -> b
+    java.lang.String phoneNumberMetadataFilePrefix -> a
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata getMetadataForNonGeographicalRegion(int) -> a
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata getMetadataForRegion(java.lang.String) -> a
+    boolean isNonGeographical(int) -> b
+com.google.i18n.phonenumbers.NumberParseException -> c.a.a.a.h:
+    com.google.i18n.phonenumbers.NumberParseException$ErrorType errorType -> b
+    java.lang.String message -> c
+    com.google.i18n.phonenumbers.NumberParseException$ErrorType getErrorType() -> a
+com.google.i18n.phonenumbers.NumberParseException$ErrorType -> c.a.a.a.h$a:
+    com.google.i18n.phonenumbers.NumberParseException$ErrorType TOO_LONG -> f
+    com.google.i18n.phonenumbers.NumberParseException$ErrorType TOO_SHORT_AFTER_IDD -> d
+    com.google.i18n.phonenumbers.NumberParseException$ErrorType[] $VALUES -> g
+    com.google.i18n.phonenumbers.NumberParseException$ErrorType TOO_SHORT_NSN -> e
+    com.google.i18n.phonenumbers.NumberParseException$ErrorType INVALID_COUNTRY_CODE -> b
+    com.google.i18n.phonenumbers.NumberParseException$ErrorType NOT_A_NUMBER -> c
+com.google.i18n.phonenumbers.PhoneNumberUtil -> c.a.a.a.i:
+    java.util.regex.Pattern VALID_PHONE_NUMBER_PATTERN -> w
+    java.util.regex.Pattern FIRST_GROUP_ONLY_PREFIX_PATTERN -> y
+    com.google.i18n.phonenumbers.internal.RegexCache regexCache -> e
+    java.util.logging.Logger logger -> h
+    java.util.regex.Pattern VALID_ALPHA_PHONE_PATTERN -> s
+    java.lang.String VALID_ALPHA -> l
+    java.util.regex.Pattern CAPTURING_DIGIT_PATTERN -> o
+    java.util.regex.Pattern SECOND_NUMBER_START_PATTERN -> q
+    com.google.i18n.phonenumbers.PhoneNumberUtil instance -> z
+    java.util.regex.Pattern PLUS_CHARS_PATTERN -> m
+    java.lang.String VALID_PHONE_NUMBER -> t
+    java.util.Set countryCodesForNonGeographicalRegion -> g
+    java.util.Map DIALLABLE_CHAR_MAPPINGS -> i
+    java.util.Map ALPHA_PHONE_MAPPINGS -> k
+    com.google.i18n.phonenumbers.MetadataSource metadataSource -> a
+    java.util.regex.Pattern EXTN_PATTERN -> v
+    java.util.regex.Pattern FIRST_GROUP_PATTERN -> x
+    java.util.regex.Pattern UNWANTED_END_CHAR_PATTERN -> r
+    java.util.regex.Pattern SEPARATOR_PATTERN -> n
+    java.util.regex.Pattern VALID_START_CHAR_PATTERN -> p
+    java.lang.String EXTN_PATTERNS_FOR_PARSING -> u
+    java.util.Map countryCallingCodeToRegionCodeMap -> b
+    java.util.Set nanpaRegions -> d
+    com.google.i18n.phonenumbers.internal.MatcherApi matcherApi -> c
+    java.util.Set supportedRegions -> f
+    java.util.Map ALPHA_MAPPINGS -> j
+    void buildNationalNumberForParsing(java.lang.String,java.lang.StringBuilder) -> a
+    com.google.i18n.phonenumbers.Phonemetadata$NumberFormat chooseFormattingPatternForNumber(java.util.List,java.lang.String) -> a
+    com.google.i18n.phonenumbers.PhoneNumberUtil createInstance(com.google.i18n.phonenumbers.MetadataLoader) -> a
+    com.google.i18n.phonenumbers.PhoneNumberUtil createInstance(com.google.i18n.phonenumbers.MetadataSource) -> a
+    boolean descHasPossibleNumberData(com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc) -> a
+    int extractCountryCode(java.lang.StringBuilder,java.lang.StringBuilder) -> a
+    java.lang.CharSequence extractPossibleNumber(java.lang.CharSequence) -> a
+    java.lang.String format(com.google.i18n.phonenumbers.Phonenumber$PhoneNumber,com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberFormat) -> a
+    void format(com.google.i18n.phonenumbers.Phonenumber$PhoneNumber,com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberFormat,java.lang.StringBuilder) -> a
+    java.lang.String formatNsn(java.lang.String,com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata,com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberFormat) -> a
+    java.lang.String formatNsn(java.lang.String,com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata,com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberFormat,java.lang.CharSequence) -> a
+    java.lang.String formatNsnUsingPattern(java.lang.String,com.google.i18n.phonenumbers.Phonemetadata$NumberFormat,com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberFormat,java.lang.CharSequence) -> a
+    com.google.i18n.phonenumbers.AsYouTypeFormatter getAsYouTypeFormatter(java.lang.String) -> a
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata getMetadataForNonGeographicalRegion(int) -> a
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata getMetadataForRegionOrCallingCode(int,java.lang.String) -> a
+    java.lang.String getNationalSignificantNumber(com.google.i18n.phonenumbers.Phonenumber$PhoneNumber) -> a
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc getNumberDescByType(com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata,com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType) -> a
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType getNumberTypeHelper(java.lang.String,com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata) -> a
+    java.lang.String getRegionCodeForNumberFromRegionList(com.google.i18n.phonenumbers.Phonenumber$PhoneNumber,java.util.List) -> a
+    java.util.Set getSupportedRegions() -> a
+    boolean isNumberMatchingDesc(java.lang.String,com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc) -> a
+    boolean isValidNumberForRegion(com.google.i18n.phonenumbers.Phonenumber$PhoneNumber,java.lang.String) -> a
+    void maybeAppendFormattedExtension(com.google.i18n.phonenumbers.Phonenumber$PhoneNumber,com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata,com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberFormat,java.lang.StringBuilder) -> a
+    int maybeExtractCountryCode(java.lang.CharSequence,com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata,java.lang.StringBuilder,boolean,com.google.i18n.phonenumbers.Phonenumber$PhoneNumber) -> a
+    java.lang.String maybeStripExtension(java.lang.StringBuilder) -> a
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber$CountryCodeSource maybeStripInternationalPrefixAndNormalize(java.lang.StringBuilder,java.lang.String) -> a
+    boolean maybeStripNationalPrefixAndCarrierCode(java.lang.StringBuilder,com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata,java.lang.StringBuilder) -> a
+    java.lang.StringBuilder normalizeDigits(java.lang.CharSequence,boolean) -> a
+    java.lang.String normalizeHelper(java.lang.CharSequence,java.util.Map,boolean) -> a
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber parse(java.lang.CharSequence,java.lang.String) -> a
+    void parse(java.lang.CharSequence,java.lang.String,com.google.i18n.phonenumbers.Phonenumber$PhoneNumber) -> a
+    void parseHelper(java.lang.CharSequence,java.lang.String,boolean,boolean,com.google.i18n.phonenumbers.Phonenumber$PhoneNumber) -> a
+    boolean parsePrefixAsIdd(java.util.regex.Pattern,java.lang.StringBuilder) -> a
+    void prefixNumberWithCountryCallingCode(int,com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberFormat,java.lang.StringBuilder) -> a
+    void setInstance(com.google.i18n.phonenumbers.PhoneNumberUtil) -> a
+    void setItalianLeadingZerosForPhoneNumber(java.lang.CharSequence,com.google.i18n.phonenumbers.Phonenumber$PhoneNumber) -> a
+    com.google.i18n.phonenumbers.PhoneNumberUtil$ValidationResult testNumberLength(java.lang.CharSequence,com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata) -> a
+    com.google.i18n.phonenumbers.PhoneNumberUtil$ValidationResult testNumberLength(java.lang.CharSequence,com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata,com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType) -> a
+    boolean checkRegionForParsing(java.lang.CharSequence,java.lang.String) -> b
+    int getCountryCodeForRegion(java.lang.String) -> b
+    com.google.i18n.phonenumbers.PhoneNumberUtil getInstance() -> b
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType getNumberType(com.google.i18n.phonenumbers.Phonenumber$PhoneNumber) -> b
+    java.lang.String getRegionCodeForCountryCode(int) -> b
+    boolean isViablePhoneNumber(java.lang.CharSequence) -> b
+    java.lang.StringBuilder normalize(java.lang.StringBuilder) -> b
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata getMetadataForRegion(java.lang.String) -> c
+    java.lang.String getRegionCodeForNumber(com.google.i18n.phonenumbers.Phonenumber$PhoneNumber) -> c
+    boolean hasValidCountryCallingCode(int) -> c
+    java.lang.String normalizeDiallableCharsOnly(java.lang.CharSequence) -> c
+    java.lang.String createExtnPattern(java.lang.String) -> d
+    boolean isValidNumber(com.google.i18n.phonenumbers.Phonenumber$PhoneNumber) -> d
+    java.lang.String normalizeDigitsOnly(java.lang.CharSequence) -> d
+    boolean formattingRuleHasFirstGroupOnly(java.lang.String) -> e
+    int getCountryCodeForValidRegion(java.lang.String) -> f
+    boolean isValidRegionCode(java.lang.String) -> g
+com.google.i18n.phonenumbers.PhoneNumberUtil$2 -> c.a.a.a.i$a:
+    int[] $SwitchMap$com$google$i18n$phonenumbers$PhoneNumberUtil$PhoneNumberFormat -> b
+    int[] $SwitchMap$com$google$i18n$phonenumbers$PhoneNumberUtil$PhoneNumberType -> c
+    int[] $SwitchMap$com$google$i18n$phonenumbers$Phonenumber$PhoneNumber$CountryCodeSource -> a
+com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberFormat -> c.a.a.a.i$b:
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberFormat[] $VALUES -> f
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberFormat NATIONAL -> d
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberFormat RFC3966 -> e
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberFormat E164 -> b
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberFormat INTERNATIONAL -> c
+com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType -> c.a.a.a.i$c:
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType VOICEMAIL -> l
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType UAN -> k
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType PAGER -> j
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType PERSONAL_NUMBER -> i
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType VOIP -> h
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType SHARED_COST -> g
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType PREMIUM_RATE -> f
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType TOLL_FREE -> e
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType FIXED_LINE_OR_MOBILE -> d
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType MOBILE -> c
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType FIXED_LINE -> b
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType[] $VALUES -> n
+    com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType UNKNOWN -> m
+com.google.i18n.phonenumbers.PhoneNumberUtil$ValidationResult -> c.a.a.a.i$d:
+    com.google.i18n.phonenumbers.PhoneNumberUtil$ValidationResult[] $VALUES -> h
+    com.google.i18n.phonenumbers.PhoneNumberUtil$ValidationResult IS_POSSIBLE -> b
+    com.google.i18n.phonenumbers.PhoneNumberUtil$ValidationResult IS_POSSIBLE_LOCAL_ONLY -> c
+    com.google.i18n.phonenumbers.PhoneNumberUtil$ValidationResult INVALID_COUNTRY_CODE -> d
+    com.google.i18n.phonenumbers.PhoneNumberUtil$ValidationResult TOO_SHORT -> e
+    com.google.i18n.phonenumbers.PhoneNumberUtil$ValidationResult INVALID_LENGTH -> f
+    com.google.i18n.phonenumbers.PhoneNumberUtil$ValidationResult TOO_LONG -> g
+com.google.i18n.phonenumbers.Phonemetadata$NumberFormat -> c.a.a.a.j:
+    java.lang.String nationalPrefixFormattingRule_ -> f
+    java.lang.String domesticCarrierCodeFormattingRule_ -> i
+    java.util.List leadingDigitsPattern_ -> d
+    boolean hasNationalPrefixFormattingRule -> e
+    boolean nationalPrefixOptionalWhenFormatting_ -> g
+    boolean hasDomesticCarrierCodeFormattingRule -> h
+    java.lang.String format_ -> c
+    java.lang.String pattern_ -> b
+    java.lang.String getDomesticCarrierCodeFormattingRule() -> a
+    java.lang.String getLeadingDigitsPattern(int) -> a
+    com.google.i18n.phonenumbers.Phonemetadata$NumberFormat setDomesticCarrierCodeFormattingRule(java.lang.String) -> a
+    com.google.i18n.phonenumbers.Phonemetadata$NumberFormat setNationalPrefixOptionalWhenFormatting(boolean) -> a
+    java.lang.String getFormat() -> b
+    com.google.i18n.phonenumbers.Phonemetadata$NumberFormat setFormat(java.lang.String) -> b
+    int getLeadingDigitsPatternCount() -> c
+    com.google.i18n.phonenumbers.Phonemetadata$NumberFormat setNationalPrefixFormattingRule(java.lang.String) -> c
+    java.lang.String getNationalPrefixFormattingRule() -> d
+    com.google.i18n.phonenumbers.Phonemetadata$NumberFormat setPattern(java.lang.String) -> d
+    boolean getNationalPrefixOptionalWhenFormatting() -> e
+    java.lang.String getPattern() -> f
+    boolean hasDomesticCarrierCodeFormattingRule() -> g
+    int leadingDigitsPatternSize() -> h
+com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata -> c.a.a.a.k:
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc voip_ -> q
+    boolean mobileNumberPortableRegion_ -> d0
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc uan_ -> u
+    int countryCode_ -> K
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc tollFree_ -> i
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc sharedCost_ -> m
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc fixedLine_ -> e
+    boolean hasTollFree -> h
+    boolean hasFixedLine -> d
+    boolean hasPreferredInternationalPrefix -> M
+    boolean hasPersonalNumber -> n
+    boolean hasPremiumRate -> j
+    java.lang.String internationalPrefix_ -> L
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc noInternationalDialling_ -> I
+    boolean hasNationalPrefixTransformRule -> U
+    java.lang.String leadingDigits_ -> b0
+    boolean hasEmergency -> v
+    java.lang.String nationalPrefix_ -> P
+    boolean hasPreferredExtnPrefix -> Q
+    boolean hasPager -> r
+    java.lang.String nationalPrefixForParsing_ -> T
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc shortCode_ -> A
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc carrierSpecific_ -> E
+    boolean hasShortCode -> z
+    boolean hasNoInternationalDialling -> H
+    boolean hasCarrierSpecific -> D
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc pager_ -> s
+    boolean hasLeadingDigits -> a0
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc emergency_ -> w
+    boolean leadingZeroPossible_ -> c0
+    java.util.List intlNumberFormat_ -> Y
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc premiumRate_ -> k
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc personalNumber_ -> o
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc generalDesc_ -> c
+    boolean mainCountryForCode_ -> Z
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc mobile_ -> g
+    boolean hasMobile -> f
+    boolean hasGeneralDesc -> b
+    boolean hasNationalPrefix -> O
+    boolean hasVoip -> p
+    java.lang.String id_ -> J
+    boolean hasSharedCost -> l
+    java.lang.String preferredInternationalPrefix_ -> N
+    boolean sameMobileAndFixedLinePattern_ -> W
+    java.util.List numberFormat_ -> X
+    boolean hasVoicemail -> x
+    java.lang.String preferredExtnPrefix_ -> R
+    boolean hasNationalPrefixForParsing -> S
+    boolean hasUan -> t
+    java.lang.String nationalPrefixTransformRule_ -> V
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc standardRate_ -> C
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc smsServices_ -> G
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc voicemail_ -> y
+    boolean hasSmsServices -> F
+    boolean hasStandardRate -> B
+    int numberFormatSize() -> A
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata$Builder newBuilder() -> B
+    int getCountryCode() -> a
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setCarrierSpecific(com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc) -> a
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setCountryCode(int) -> a
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setId(java.lang.String) -> a
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setLeadingZeroPossible(boolean) -> a
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc getFixedLine() -> b
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setEmergency(com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc) -> b
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setInternationalPrefix(java.lang.String) -> b
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setMainCountryForCode(boolean) -> b
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc getGeneralDesc() -> c
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setFixedLine(com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc) -> c
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setLeadingDigits(java.lang.String) -> c
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setMobileNumberPortableRegion(boolean) -> c
+    java.lang.String getInternationalPrefix() -> d
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setGeneralDesc(com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc) -> d
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setNationalPrefix(java.lang.String) -> d
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setSameMobileAndFixedLinePattern(boolean) -> d
+    int getIntlNumberFormatCount() -> e
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setMobile(com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc) -> e
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setNationalPrefixForParsing(java.lang.String) -> e
+    java.util.List getIntlNumberFormatList() -> f
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setNationalPrefixTransformRule(java.lang.String) -> f
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setNoInternationalDialling(com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc) -> f
+    java.lang.String getLeadingDigits() -> g
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setPager(com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc) -> g
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setPreferredExtnPrefix(java.lang.String) -> g
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc getMobile() -> h
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setPersonalNumber(com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc) -> h
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setPreferredInternationalPrefix(java.lang.String) -> h
+    java.lang.String getNationalPrefixForParsing() -> i
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setPremiumRate(com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc) -> i
+    java.lang.String getNationalPrefixTransformRule() -> j
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setSharedCost(com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc) -> j
+    int getNumberFormatCount() -> k
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setShortCode(com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc) -> k
+    java.util.List getNumberFormatList() -> l
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setSmsServices(com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc) -> l
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc getPager() -> m
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setStandardRate(com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc) -> m
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc getPersonalNumber() -> n
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setTollFree(com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc) -> n
+    java.lang.String getPreferredExtnPrefix() -> o
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setUan(com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc) -> o
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc getPremiumRate() -> p
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setVoicemail(com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc) -> p
+    boolean getSameMobileAndFixedLinePattern() -> q
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setVoip(com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc) -> q
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc getSharedCost() -> r
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc getTollFree() -> s
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc getUan() -> t
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc getVoicemail() -> u
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc getVoip() -> v
+    boolean hasLeadingDigits() -> w
+    boolean hasNationalPrefixForParsing() -> x
+    boolean hasPreferredExtnPrefix() -> y
+    int intlNumberFormatSize() -> z
+com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata$Builder -> c.a.a.a.k$a:
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata build() -> C
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata$Builder setId(java.lang.String) -> a
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setId(java.lang.String) -> a
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata$Builder setInternationalPrefix(java.lang.String) -> b
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadata setInternationalPrefix(java.lang.String) -> b
+com.google.i18n.phonenumbers.Phonemetadata$PhoneMetadataCollection -> c.a.a.a.l:
+    java.util.List metadata_ -> b
+    int getMetadataCount() -> a
+    java.util.List getMetadataList() -> b
+com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc -> c.a.a.a.m:
+    java.lang.String exampleNumber_ -> g
+    java.util.List possibleLengthLocalOnly_ -> e
+    java.util.List possibleLength_ -> d
+    boolean hasExampleNumber -> f
+    java.lang.String nationalNumberPattern_ -> c
+    boolean hasNationalNumberPattern -> b
+    java.lang.String getNationalNumberPattern() -> a
+    int getPossibleLength(int) -> a
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc setExampleNumber(java.lang.String) -> a
+    int getPossibleLengthCount() -> b
+    com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc setNationalNumberPattern(java.lang.String) -> b
+    java.util.List getPossibleLengthList() -> c
+    int getPossibleLengthLocalOnlyCount() -> d
+    java.util.List getPossibleLengthLocalOnlyList() -> e
+com.google.i18n.phonenumbers.Phonenumber$PhoneNumber -> c.a.a.a.n:
+    boolean hasPreferredDomesticCarrierCode -> n
+    java.lang.String rawInput_ -> k
+    boolean hasRawInput -> j
+    int numberOfLeadingZeros_ -> i
+    boolean hasCountryCodeSource -> l
+    java.lang.String preferredDomesticCarrierCode_ -> o
+    long nationalNumber_ -> c
+    int countryCode_ -> b
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber$CountryCodeSource countryCodeSource_ -> m
+    boolean hasItalianLeadingZero -> f
+    boolean italianLeadingZero_ -> g
+    boolean hasNumberOfLeadingZeros -> h
+    java.lang.String extension_ -> e
+    boolean hasExtension -> d
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber clearCountryCodeSource() -> a
+    boolean exactlySameAs(com.google.i18n.phonenumbers.Phonenumber$PhoneNumber) -> a
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber setCountryCode(int) -> a
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber setCountryCodeSource(com.google.i18n.phonenumbers.Phonenumber$PhoneNumber$CountryCodeSource) -> a
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber setExtension(java.lang.String) -> a
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber setItalianLeadingZero(boolean) -> a
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber setNationalNumber(long) -> a
+    int getCountryCode() -> b
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber setNumberOfLeadingZeros(int) -> b
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber setPreferredDomesticCarrierCode(java.lang.String) -> b
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber$CountryCodeSource getCountryCodeSource() -> c
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber setRawInput(java.lang.String) -> c
+    java.lang.String getExtension() -> d
+    long getNationalNumber() -> e
+    int getNumberOfLeadingZeros() -> f
+    java.lang.String getPreferredDomesticCarrierCode() -> g
+    java.lang.String getRawInput() -> h
+    boolean hasCountryCodeSource() -> i
+    boolean hasExtension() -> j
+    boolean hasItalianLeadingZero() -> k
+    boolean hasNumberOfLeadingZeros() -> l
+    boolean hasPreferredDomesticCarrierCode() -> m
+    boolean hasRawInput() -> n
+    boolean isItalianLeadingZero() -> o
+com.google.i18n.phonenumbers.Phonenumber$PhoneNumber$CountryCodeSource -> c.a.a.a.n$a:
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber$CountryCodeSource FROM_NUMBER_WITH_PLUS_SIGN -> b
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber$CountryCodeSource UNSPECIFIED -> f
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber$CountryCodeSource FROM_DEFAULT_COUNTRY -> e
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber$CountryCodeSource FROM_NUMBER_WITHOUT_PLUS_SIGN -> d
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber$CountryCodeSource FROM_NUMBER_WITH_IDD -> c
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber$CountryCodeSource[] $VALUES -> g
+com.google.i18n.phonenumbers.ShortNumbersRegionCodeSet -> c.a.a.a.o:
+    java.util.Set getRegionCodeSet() -> a
+com.google.i18n.phonenumbers.internal.MatcherApi -> c.a.a.a.p.a:
+    boolean matchNationalNumber(java.lang.CharSequence,com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc,boolean) -> a
+com.google.i18n.phonenumbers.internal.RegexBasedMatcher -> c.a.a.a.p.b:
+    com.google.i18n.phonenumbers.internal.RegexCache regexCache -> a
+    com.google.i18n.phonenumbers.internal.MatcherApi create() -> a
+    boolean match(java.lang.CharSequence,java.util.regex.Pattern,boolean) -> a
+    boolean matchNationalNumber(java.lang.CharSequence,com.google.i18n.phonenumbers.Phonemetadata$PhoneNumberDesc,boolean) -> a
+com.google.i18n.phonenumbers.internal.RegexCache -> c.a.a.a.p.c:
+    com.google.i18n.phonenumbers.internal.RegexCache$LRUCache cache -> a
+    java.util.regex.Pattern getPatternForRegex(java.lang.String) -> a
+com.google.i18n.phonenumbers.internal.RegexCache$LRUCache -> c.a.a.a.p.c$a:
+    java.util.LinkedHashMap map -> a
+    int size -> b
+    int access$000(com.google.i18n.phonenumbers.internal.RegexCache$LRUCache) -> a
+    java.lang.Object get(java.lang.Object) -> a
+    void put(java.lang.Object,java.lang.Object) -> a
+com.google.i18n.phonenumbers.internal.RegexCache$LRUCache$1 -> c.a.a.a.p.c$a$a:
+    com.google.i18n.phonenumbers.internal.RegexCache$LRUCache this$0 -> b
+com.jrai.flutter_keyboard_visibility.FlutterKeyboardVisibilityPlugin -> c.b.a.a:
+    io.flutter.plugin.common.EventChannel$EventSink eventSink -> b
+    android.view.View mainView -> c
+    boolean isVisible -> d
+    void init(io.flutter.plugin.common.BinaryMessenger) -> a
+    void listenForKeyboard(android.app.Activity) -> a
+    void onAttachedToActivity(io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding) -> a
+    void onAttachedToEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> a
+    void onCancel(java.lang.Object) -> a
+    void onDetachedFromActivity() -> a
+    void onListen(java.lang.Object,io.flutter.plugin.common.EventChannel$EventSink) -> a
+    void onDetachedFromActivityForConfigChanges() -> b
+    void onDetachedFromEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> b
+    void onReattachedToActivityForConfigChanges(io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding) -> b
+    void unregisterListener() -> c
+com.julienvignali.phone_number.MethodCallHandlerImpl -> c.c.a.a:
+    java.lang.String access$000(com.julienvignali.phone_number.MethodCallHandlerImpl,com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType) -> a
+    void getAllSupportedRegions(io.flutter.plugin.common.MethodChannel$Result) -> a
+    java.lang.String numberTypeToString(com.google.i18n.phonenumbers.PhoneNumberUtil$PhoneNumberType) -> a
+    void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> a
+    java.util.HashMap parseStringAndRegion(java.lang.String,java.lang.String,com.google.i18n.phonenumbers.PhoneNumberUtil) -> a
+    void format(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> b
+    void parse(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> c
+    void parseList(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> d
+    void validate(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> e
+com.julienvignali.phone_number.MethodCallHandlerImpl$1 -> c.c.a.a$a:
+    com.google.i18n.phonenumbers.PhoneNumberUtil val$util -> b
+    com.google.i18n.phonenumbers.Phonenumber$PhoneNumber val$phoneNumber -> c
+    com.julienvignali.phone_number.MethodCallHandlerImpl this$0 -> d
+com.julienvignali.phone_number.MethodCallHandlerImpl$2 -> c.c.a.a$b:
+    int[] $SwitchMap$com$google$i18n$phonenumbers$PhoneNumberUtil$PhoneNumberType -> a
+com.julienvignali.phone_number.PhoneNumberPlugin -> c.c.a.b:
+    io.flutter.plugin.common.MethodChannel channel -> b
+    void onAttachedToEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> a
+    void startListening(io.flutter.plugin.common.BinaryMessenger) -> a
+    void stopListening() -> a
+    void onDetachedFromEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> b
 com.pichillilorenzo.flutter_inappwebview.ChromeCustomTabs.ChromeCustomTabsActivity -> com.pichillilorenzo.flutter_inappwebview.ChromeCustomTabs.ChromeCustomTabsActivity:
     com.pichillilorenzo.flutter_inappwebview.ChromeCustomTabs.ChromeCustomTabsOptions options -> e
     androidx.browser.customtabs.CustomTabsSession customTabsSession -> g
@@ -5806,26 +6463,26 @@ com.pichillilorenzo.flutter_inappwebview.ChromeCustomTabs.ServiceConnection -> c
 com.pichillilorenzo.flutter_inappwebview.ChromeCustomTabs.ServiceConnectionCallback -> com.pichillilorenzo.flutter_inappwebview.ChromeCustomTabs.f:
     void onServiceConnected(androidx.browser.customtabs.CustomTabsClient) -> a
     void onServiceDisconnected() -> a
-com.pichillilorenzo.flutter_inappwebview.ChromeSafariBrowserManager -> c.a.a.a:
+com.pichillilorenzo.flutter_inappwebview.ChromeSafariBrowserManager -> c.d.a.a:
     io.flutter.plugin.common.MethodChannel channel -> b
     void dispose() -> a
     void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> a
     void open(android.app.Activity,java.lang.String,java.lang.String,java.util.HashMap,java.util.List,java.lang.String,java.util.Map,java.util.HashMap,java.util.HashMap,java.lang.Integer,io.flutter.plugin.common.MethodChannel$Result) -> a
-com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlocker -> c.a.a.b.a:
+com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlocker -> c.d.a.b.a:
     com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerAction action -> b
     com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerTrigger trigger -> a
-com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerAction -> c.a.a.b.b:
+com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerAction -> c.d.a.b.b:
     com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerActionType type -> a
     java.lang.String selector -> b
     com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerAction fromMap(java.util.Map) -> a
-com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerActionType -> c.a.a.b.c:
+com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerActionType -> c.d.a.b.c:
     com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerActionType BLOCK -> c
     com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerActionType CSS_DISPLAY_NONE -> d
     com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerActionType[] $VALUES -> f
     java.lang.String value -> b
     com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerActionType MAKE_HTTPS -> e
     com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerActionType fromValue(java.lang.String) -> a
-com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerHandler -> c.a.a.b.d:
+com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerHandler -> c.d.a.b.d:
     java.util.List ruleList -> a
     android.webkit.WebResourceResponse checkUrl(com.pichillilorenzo.flutter_inappwebview.InAppWebView.InAppWebView,java.lang.String) -> a
     android.webkit.WebResourceResponse checkUrl(com.pichillilorenzo.flutter_inappwebview.InAppWebView.InAppWebView,java.lang.String,com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerTriggerResourceType) -> a
@@ -5833,16 +6490,16 @@ com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerHandler ->
     com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerTriggerResourceType getResourceTypeFromContentType(java.lang.String) -> a
     java.util.List getRuleList() -> a
     com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerTriggerResourceType getResourceTypeFromUrl(java.lang.String) -> b
-com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerHandler$1 -> c.a.a.b.d$a:
+com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerHandler$1 -> c.d.a.b.d$a:
     com.pichillilorenzo.flutter_inappwebview.InAppWebView.InAppWebView val$webView -> c
     java.util.concurrent.CountDownLatch val$latch -> d
     java.lang.String[] val$webViewUrl -> b
-com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerHandler$2 -> c.a.a.b.d$b:
+com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerHandler$2 -> c.d.a.b.d$b:
     com.pichillilorenzo.flutter_inappwebview.InAppWebView.InAppWebView val$webView -> b
     java.lang.String val$jsScript -> c
-com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerHandler$3 -> c.a.a.b.d$c:
+com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerHandler$3 -> c.d.a.b.d$c:
     int[] $SwitchMap$com$pichillilorenzo$flutter_inappwebview$ContentBlocker$ContentBlockerActionType -> a
-com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerTrigger -> c.a.a.b.e:
+com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerTrigger -> c.d.a.b.e:
     java.util.List loadType -> f
     java.util.regex.Pattern urlFilterPatternCompiled -> b
     java.util.List unlessDomain -> e
@@ -5852,7 +6509,7 @@ com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerTrigger ->
     java.util.List unlessTopUrl -> h
     java.util.List ifTopUrl -> g
     com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerTrigger fromMap(java.util.Map) -> a
-com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerTriggerResourceType -> c.a.a.b.f:
+com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerTriggerResourceType -> c.d.a.b.f:
     com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerTriggerResourceType DOCUMENT -> c
     com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerTriggerResourceType IMAGE -> d
     com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerTriggerResourceType FONT -> g
@@ -5865,13 +6522,13 @@ com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerTriggerRes
     com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerTriggerResourceType MEDIA -> i
     com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerTriggerResourceType POPUP -> j
     com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerTriggerResourceType fromValue(java.lang.String) -> a
-com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.Credential -> c.a.a.c.a:
+com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.Credential -> c.d.a.c.a:
     java.lang.Long protectionSpaceId -> d
     java.lang.Long id -> a
     java.lang.String password -> c
     java.lang.String username -> b
     java.util.Map toMap() -> a
-com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.CredentialDao -> c.a.a.c.b:
+com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.CredentialDao -> c.d.a.c.b:
     com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.CredentialDatabaseHelper credentialDatabaseHelper -> a
     java.lang.String[] projection -> b
     long delete(com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.Credential) -> a
@@ -5879,7 +6536,7 @@ com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.CredentialDao -> c.a
     java.util.List getAllByProtectionSpaceId(java.lang.Long) -> a
     long insert(com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.Credential) -> b
     long update(com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.Credential) -> c
-com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.CredentialDatabase -> c.a.a.c.c:
+com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.CredentialDatabase -> c.d.a.c.c:
     com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.CredentialDao credentialDao -> b
     com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.CredentialDatabase instance -> d
     com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.ProtectionSpaceDao protectionSpaceDao -> a
@@ -5890,28 +6547,28 @@ com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.CredentialDatabase -
     void removeHttpAuthCredential(java.lang.String,java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String) -> a
     void removeHttpAuthCredentials(java.lang.String,java.lang.String,java.lang.String,java.lang.Integer) -> b
     void setHttpAuthCredential(java.lang.String,java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String) -> b
-com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.CredentialDatabaseHelper -> c.a.a.c.d:
+com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.CredentialDatabaseHelper -> c.d.a.c.d:
     void clearAllTables(android.database.sqlite.SQLiteDatabase) -> a
-com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.ProtectionSpace -> c.a.a.c.e:
+com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.ProtectionSpace -> c.d.a.c.e:
     java.lang.Integer port -> e
     java.lang.Long id -> a
     java.lang.String procotol -> c
     java.lang.String host -> b
     java.lang.String realm -> d
     java.util.Map toMap() -> a
-com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.ProtectionSpaceDao -> c.a.a.c.f:
+com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.ProtectionSpaceDao -> c.d.a.c.f:
     com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.CredentialDatabaseHelper credentialDatabaseHelper -> a
     java.lang.String[] projection -> b
     long delete(com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.ProtectionSpace) -> a
     com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.ProtectionSpace find(java.lang.String,java.lang.String,java.lang.String,java.lang.Integer) -> a
     java.util.List getAll() -> a
     long insert(com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.ProtectionSpace) -> b
-com.pichillilorenzo.flutter_inappwebview.CredentialDatabaseHandler -> c.a.a.d:
+com.pichillilorenzo.flutter_inappwebview.CredentialDatabaseHandler -> c.d.a.d:
     com.pichillilorenzo.flutter_inappwebview.CredentialDatabase.CredentialDatabase credentialDatabase -> c
     io.flutter.plugin.common.MethodChannel channel -> b
     void dispose() -> a
     void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> a
-com.pichillilorenzo.flutter_inappwebview.HeadlessInAppWebViewManager -> c.a.a.e:
+com.pichillilorenzo.flutter_inappwebview.HeadlessInAppWebViewManager -> c.d.a.e:
     java.util.Map flutterWebViews -> c
     io.flutter.plugin.common.MethodChannel channel -> b
     void createHeadlessWebView(android.app.Activity,java.lang.String,java.util.HashMap) -> a
@@ -5919,19 +6576,19 @@ com.pichillilorenzo.flutter_inappwebview.HeadlessInAppWebViewManager -> c.a.a.e:
     void disposeHeadlessWebView(java.lang.String) -> a
     void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> a
 com.pichillilorenzo.flutter_inappwebview.InAppBrowser.InAppBrowserActivity -> com.pichillilorenzo.flutter_inappwebview.InAppBrowser.InAppBrowserActivity:
-    android.view.Menu menu -> y
-    android.widget.SearchView searchView -> z
-    android.widget.ProgressBar progressBar -> C
-    com.pichillilorenzo.flutter_inappwebview.InAppWebView.InAppWebView webView -> w
-    io.flutter.plugin.common.MethodChannel channel -> t
-    com.pichillilorenzo.flutter_inappwebview.InAppBrowser.InAppBrowserOptions options -> A
-    java.lang.String uuid -> v
-    java.util.Map headers -> B
-    java.lang.Integer windowId -> u
-    java.util.List activityResultListeners -> F
-    androidx.appcompat.app.ActionBar actionBar -> x
-    java.lang.String fromActivity -> E
-    boolean isHidden -> D
+    java.lang.String fromActivity -> F
+    android.widget.ProgressBar progressBar -> D
+    io.flutter.plugin.common.MethodChannel channel -> u
+    com.pichillilorenzo.flutter_inappwebview.InAppWebView.InAppWebView webView -> x
+    android.widget.SearchView searchView -> A
+    com.pichillilorenzo.flutter_inappwebview.InAppBrowser.InAppBrowserOptions options -> B
+    java.lang.String uuid -> w
+    java.util.Map headers -> C
+    java.lang.Integer windowId -> v
+    androidx.appcompat.app.ActionBar actionBar -> y
+    boolean isHidden -> E
+    java.util.List activityResultListeners -> G
+    android.view.Menu menu -> z
     java.lang.Float getScale() -> A
     java.lang.Integer getScrollX() -> B
     java.lang.Integer getScrollY() -> C
@@ -5968,17 +6625,17 @@ com.pichillilorenzo.flutter_inappwebview.InAppBrowser.InAppBrowserActivity -> co
     void setContextMenu(java.util.Map) -> a
     void setOptions(com.pichillilorenzo.flutter_inappwebview.InAppBrowser.InAppBrowserOptions,java.util.HashMap) -> a
     void zoomBy(java.lang.Float) -> a
-    boolean canGoBackOrForward(int) -> b
     void close(io.flutter.plugin.common.MethodChannel$Result) -> b
     void injectCSSCode(java.lang.String) -> b
     void loadFile(java.lang.String,io.flutter.plugin.common.MethodChannel$Result) -> b
     void loadUrl(java.lang.String,java.util.Map,io.flutter.plugin.common.MethodChannel$Result) -> b
     boolean pageUp(boolean) -> b
     void scrollTo(java.lang.Integer,java.lang.Integer,java.lang.Boolean) -> b
+    boolean canGoBackOrForward(int) -> c
     void getSelectedText(io.flutter.plugin.common.MethodChannel$Result) -> c
-    void goBackOrForward(int) -> c
     void injectCSSFileFromUrl(java.lang.String) -> c
     void loadUrl(java.lang.String,io.flutter.plugin.common.MethodChannel$Result) -> c
+    void goBackOrForward(int) -> d
     void injectJavascriptFileFromUrl(java.lang.String) -> d
     void startSafeBrowsing(io.flutter.plugin.common.MethodChannel$Result) -> d
     void takeScreenshot(io.flutter.plugin.common.MethodChannel$Result) -> e
@@ -6023,7 +6680,7 @@ com.pichillilorenzo.flutter_inappwebview.InAppBrowser.InAppBrowserOptions -> com
     java.util.Map getRealOptions(com.pichillilorenzo.flutter_inappwebview.InAppBrowser.InAppBrowserActivity) -> a
     com.pichillilorenzo.flutter_inappwebview.InAppBrowser.InAppBrowserOptions parse(java.util.Map) -> a
     java.util.Map toMap() -> a
-com.pichillilorenzo.flutter_inappwebview.InAppBrowserManager -> c.a.a.f:
+com.pichillilorenzo.flutter_inappwebview.InAppBrowserManager -> c.d.a.f:
     io.flutter.plugin.common.MethodChannel channel -> b
     void dispose() -> a
     java.lang.String getMimeType(java.lang.String) -> a
@@ -6495,16 +7152,16 @@ com.pichillilorenzo.flutter_inappwebview.InAppWebView.ThreadedInputConnectionPro
     android.view.View targetView -> e
     android.view.View rootView -> d
     void setLocked(boolean) -> a
-com.pichillilorenzo.flutter_inappwebview.InAppWebViewFlutterPlugin -> c.a.a.g:
-    com.pichillilorenzo.flutter_inappwebview.CredentialDatabaseHandler credentialDatabaseHandler -> f
-    com.pichillilorenzo.flutter_inappwebview.ChromeSafariBrowserManager chromeSafariBrowserManager -> c
-    com.pichillilorenzo.flutter_inappwebview.MyCookieManager myCookieManager -> e
-    com.pichillilorenzo.flutter_inappwebview.InAppBrowserManager inAppBrowserManager -> a
-    com.pichillilorenzo.flutter_inappwebview.InAppWebViewStatic inAppWebViewStatic -> d
-    android.webkit.ValueCallback filePathCallbackLegacy -> h
-    com.pichillilorenzo.flutter_inappwebview.MyWebStorage myWebStorage -> g
-    android.webkit.ValueCallback filePathCallback -> i
-    com.pichillilorenzo.flutter_inappwebview.HeadlessInAppWebViewManager headlessInAppWebViewManager -> b
+com.pichillilorenzo.flutter_inappwebview.InAppWebViewFlutterPlugin -> c.d.a.g:
+    com.pichillilorenzo.flutter_inappwebview.ChromeSafariBrowserManager chromeSafariBrowserManager -> d
+    com.pichillilorenzo.flutter_inappwebview.MyCookieManager myCookieManager -> f
+    android.webkit.ValueCallback filePathCallback -> j
+    com.pichillilorenzo.flutter_inappwebview.InAppBrowserManager inAppBrowserManager -> b
+    com.pichillilorenzo.flutter_inappwebview.InAppWebViewStatic inAppWebViewStatic -> e
+    android.webkit.ValueCallback filePathCallbackLegacy -> i
+    com.pichillilorenzo.flutter_inappwebview.MyWebStorage myWebStorage -> h
+    com.pichillilorenzo.flutter_inappwebview.CredentialDatabaseHandler credentialDatabaseHandler -> g
+    com.pichillilorenzo.flutter_inappwebview.HeadlessInAppWebViewManager headlessInAppWebViewManager -> c
     void onAttachedToActivity(io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding) -> a
     void onAttachedToEngine(android.content.Context,io.flutter.plugin.common.BinaryMessenger,android.app.Activity,io.flutter.plugin.platform.PlatformViewRegistry,io.flutter.view.FlutterView) -> a
     void onAttachedToEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> a
@@ -6512,35 +7169,35 @@ com.pichillilorenzo.flutter_inappwebview.InAppWebViewFlutterPlugin -> c.a.a.g:
     void onDetachedFromActivityForConfigChanges() -> b
     void onDetachedFromEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> b
     void onReattachedToActivityForConfigChanges(io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding) -> b
-com.pichillilorenzo.flutter_inappwebview.InAppWebViewStatic -> c.a.a.h:
+com.pichillilorenzo.flutter_inappwebview.InAppWebViewStatic -> c.d.a.h:
     io.flutter.plugin.common.MethodChannel channel -> b
     java.util.Map convertWebViewPackageToMap(android.content.pm.PackageInfo) -> a
     void dispose() -> a
     void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> a
-com.pichillilorenzo.flutter_inappwebview.InAppWebViewStatic$1 -> c.a.a.h$a:
+com.pichillilorenzo.flutter_inappwebview.InAppWebViewStatic$1 -> c.d.a.h$a:
     io.flutter.plugin.common.MethodChannel$Result val$result -> b
-com.pichillilorenzo.flutter_inappwebview.InAppWebViewStatic$2 -> c.a.a.h$b:
+com.pichillilorenzo.flutter_inappwebview.InAppWebViewStatic$2 -> c.d.a.h$b:
     io.flutter.plugin.common.MethodChannel$Result val$result -> a
     void onReceiveValue(java.lang.Boolean) -> a
-com.pichillilorenzo.flutter_inappwebview.JavaScriptBridgeInterface -> c.a.a.i:
+com.pichillilorenzo.flutter_inappwebview.JavaScriptBridgeInterface -> c.d.a.i:
     com.pichillilorenzo.flutter_inappwebview.InAppBrowser.InAppBrowserActivity inAppBrowserActivity -> b
     com.pichillilorenzo.flutter_inappwebview.InAppWebView.FlutterWebView flutterWebView -> a
     io.flutter.plugin.common.MethodChannel channel -> c
     void dispose() -> a
-com.pichillilorenzo.flutter_inappwebview.JavaScriptBridgeInterface$1 -> c.a.a.i$a:
+com.pichillilorenzo.flutter_inappwebview.JavaScriptBridgeInterface$1 -> c.d.a.i$a:
     com.pichillilorenzo.flutter_inappwebview.InAppWebView.InAppWebView val$webView -> b
-com.pichillilorenzo.flutter_inappwebview.JavaScriptBridgeInterface$2 -> c.a.a.i$b:
+com.pichillilorenzo.flutter_inappwebview.JavaScriptBridgeInterface$2 -> c.d.a.i$b:
     java.util.Map val$obj -> d
     com.pichillilorenzo.flutter_inappwebview.InAppWebView.InAppWebView val$webView -> c
     com.pichillilorenzo.flutter_inappwebview.JavaScriptBridgeInterface this$0 -> f
     java.lang.String val$handlerName -> b
     java.lang.String val$_callHandlerID -> e
-com.pichillilorenzo.flutter_inappwebview.JavaScriptBridgeInterface$2$1 -> c.a.a.i$b$a:
+com.pichillilorenzo.flutter_inappwebview.JavaScriptBridgeInterface$2$1 -> c.d.a.i$b$a:
     com.pichillilorenzo.flutter_inappwebview.JavaScriptBridgeInterface$2 this$1 -> a
     void error(java.lang.String,java.lang.String,java.lang.Object) -> a
     void notImplemented() -> a
     void success(java.lang.Object) -> a
-com.pichillilorenzo.flutter_inappwebview.MyCookieManager -> c.a.a.j:
+com.pichillilorenzo.flutter_inappwebview.MyCookieManager -> c.d.a.j:
     android.webkit.CookieManager cookieManager -> c
     io.flutter.plugin.common.MethodChannel channel -> b
     void deleteAllCookies(io.flutter.plugin.common.MethodChannel$Result) -> a
@@ -6551,16 +7208,16 @@ com.pichillilorenzo.flutter_inappwebview.MyCookieManager -> c.a.a.j:
     java.util.List getCookies(java.lang.String) -> a
     void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> a
     void setCookie(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Long,java.lang.Integer,java.lang.Boolean,java.lang.Boolean,java.lang.String,io.flutter.plugin.common.MethodChannel$Result) -> a
-com.pichillilorenzo.flutter_inappwebview.MyCookieManager$1 -> c.a.a.j$a:
+com.pichillilorenzo.flutter_inappwebview.MyCookieManager$1 -> c.d.a.j$a:
     io.flutter.plugin.common.MethodChannel$Result val$result -> a
     void onReceiveValue(java.lang.Boolean) -> a
-com.pichillilorenzo.flutter_inappwebview.MyCookieManager$2 -> c.a.a.j$b:
+com.pichillilorenzo.flutter_inappwebview.MyCookieManager$2 -> c.d.a.j$b:
     io.flutter.plugin.common.MethodChannel$Result val$result -> a
     void onReceiveValue(java.lang.Boolean) -> a
-com.pichillilorenzo.flutter_inappwebview.MyCookieManager$3 -> c.a.a.j$c:
+com.pichillilorenzo.flutter_inappwebview.MyCookieManager$3 -> c.d.a.j$c:
     io.flutter.plugin.common.MethodChannel$Result val$result -> a
     void onReceiveValue(java.lang.Boolean) -> a
-com.pichillilorenzo.flutter_inappwebview.MyWebStorage -> c.a.a.k:
+com.pichillilorenzo.flutter_inappwebview.MyWebStorage -> c.d.a.k:
     android.webkit.WebStorage webStorageManager -> c
     io.flutter.plugin.common.MethodChannel channel -> b
     void dispose() -> a
@@ -6568,51 +7225,51 @@ com.pichillilorenzo.flutter_inappwebview.MyWebStorage -> c.a.a.k:
     void getQuotaForOrigin(java.lang.String,io.flutter.plugin.common.MethodChannel$Result) -> a
     void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> a
     void getUsageForOrigin(java.lang.String,io.flutter.plugin.common.MethodChannel$Result) -> b
-com.pichillilorenzo.flutter_inappwebview.MyWebStorage$1 -> c.a.a.k$a:
+com.pichillilorenzo.flutter_inappwebview.MyWebStorage$1 -> c.d.a.k$a:
     io.flutter.plugin.common.MethodChannel$Result val$result -> a
     void onReceiveValue(java.util.Map) -> a
-com.pichillilorenzo.flutter_inappwebview.MyWebStorage$2 -> c.a.a.k$b:
+com.pichillilorenzo.flutter_inappwebview.MyWebStorage$2 -> c.d.a.k$b:
     io.flutter.plugin.common.MethodChannel$Result val$result -> a
     void onReceiveValue(java.lang.Long) -> a
-com.pichillilorenzo.flutter_inappwebview.MyWebStorage$3 -> c.a.a.k$c:
+com.pichillilorenzo.flutter_inappwebview.MyWebStorage$3 -> c.d.a.k$c:
     io.flutter.plugin.common.MethodChannel$Result val$result -> a
     void onReceiveValue(java.lang.Long) -> a
-com.pichillilorenzo.flutter_inappwebview.Options -> c.a.a.l:
-com.pichillilorenzo.flutter_inappwebview.R$id -> c.a.a.m:
-com.pichillilorenzo.flutter_inappwebview.R$layout -> c.a.a.n:
-com.pichillilorenzo.flutter_inappwebview.R$menu -> c.a.a.o:
-com.pichillilorenzo.flutter_inappwebview.R$style -> c.a.a.p:
-com.pichillilorenzo.flutter_inappwebview.Shared -> c.a.a.q:
+com.pichillilorenzo.flutter_inappwebview.Options -> c.d.a.l:
+com.pichillilorenzo.flutter_inappwebview.R$id -> c.d.a.m:
+com.pichillilorenzo.flutter_inappwebview.R$layout -> c.d.a.n:
+com.pichillilorenzo.flutter_inappwebview.R$menu -> c.d.a.o:
+com.pichillilorenzo.flutter_inappwebview.R$style -> c.d.a.p:
+com.pichillilorenzo.flutter_inappwebview.Shared -> c.d.a.q:
     android.content.Context applicationContext -> a
     io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding activityPluginBinding -> e
     android.app.Activity activity -> f
     io.flutter.plugin.common.PluginRegistry$Registrar registrar -> b
     io.flutter.plugin.common.BinaryMessenger messenger -> c
     io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterAssets flutterAssets -> d
-com.pichillilorenzo.flutter_inappwebview.Util -> c.a.a.r:
+com.pichillilorenzo.flutter_inappwebview.Util -> c.d.a.r:
     java.io.InputStream getFileAsset(java.lang.String) -> a
     okhttp3.OkHttpClient getUnsafeOkHttpClient() -> a
     java.security.cert.X509Certificate getX509CertFromSslCertHack(android.net.http.SslCertificate) -> a
     com.pichillilorenzo.flutter_inappwebview.Util$WaitFlutterResult invokeMethodAndWait(io.flutter.plugin.common.MethodChannel,java.lang.String,java.lang.Object) -> a
     com.pichillilorenzo.flutter_inappwebview.Util$PrivateKeyAndCertificates loadPrivateKeyAndCertificate(java.lang.String,java.lang.String,java.lang.String) -> a
     java.lang.String getUrlAsset(java.lang.String) -> b
-com.pichillilorenzo.flutter_inappwebview.Util$1 -> c.a.a.r$a:
+com.pichillilorenzo.flutter_inappwebview.Util$1 -> c.d.a.r$a:
     java.lang.Object val$arguments -> d
     java.lang.String val$method -> c
     java.util.Map val$flutterResultMap -> e
     io.flutter.plugin.common.MethodChannel val$channel -> b
     java.util.concurrent.CountDownLatch val$latch -> f
-com.pichillilorenzo.flutter_inappwebview.Util$1$1 -> c.a.a.r$a$a:
+com.pichillilorenzo.flutter_inappwebview.Util$1$1 -> c.d.a.r$a$a:
     com.pichillilorenzo.flutter_inappwebview.Util$1 this$0 -> a
     void error(java.lang.String,java.lang.String,java.lang.Object) -> a
     void notImplemented() -> a
     void success(java.lang.Object) -> a
-com.pichillilorenzo.flutter_inappwebview.Util$2 -> c.a.a.r$b:
-com.pichillilorenzo.flutter_inappwebview.Util$3 -> c.a.a.r$c:
-com.pichillilorenzo.flutter_inappwebview.Util$PrivateKeyAndCertificates -> c.a.a.r$d:
+com.pichillilorenzo.flutter_inappwebview.Util$2 -> c.d.a.r$b:
+com.pichillilorenzo.flutter_inappwebview.Util$3 -> c.d.a.r$c:
+com.pichillilorenzo.flutter_inappwebview.Util$PrivateKeyAndCertificates -> c.d.a.r$d:
     java.security.cert.X509Certificate[] certificates -> a
     java.security.PrivateKey privateKey -> b
-com.pichillilorenzo.flutter_inappwebview.Util$WaitFlutterResult -> c.a.a.r$e:
+com.pichillilorenzo.flutter_inappwebview.Util$WaitFlutterResult -> c.d.a.r$e:
     java.lang.Object result -> a
     java.lang.String error -> b
 io.flutter.FlutterInjector -> d.a.a:
@@ -7050,7 +7707,6 @@ io.flutter.embedding.engine.FlutterEnginePluginRegistry -> io.flutter.embedding.
     boolean has(java.lang.Class) -> a
     boolean onActivityResult(int,int,android.content.Intent) -> a
     void onNewIntent(android.content.Intent) -> a
-    boolean onRequestPermissionsResult(int,java.lang.String[],int[]) -> a
     void onRestoreInstanceState(android.os.Bundle) -> a
     void onUserLeaveHint() -> a
     void remove(java.util.Set) -> a
@@ -7073,20 +7729,24 @@ io.flutter.embedding.engine.FlutterEnginePluginRegistry$DefaultFlutterAssets -> 
     io.flutter.embedding.engine.loader.FlutterLoader flutterLoader -> a
     java.lang.String getAssetFilePathByName(java.lang.String) -> a
 io.flutter.embedding.engine.FlutterEnginePluginRegistry$FlutterEngineActivityPluginBinding -> io.flutter.embedding.engine.c$c:
-    java.util.Set onActivityResultListeners -> c
-    java.util.Set onNewIntentListeners -> d
-    java.util.Set onUserLeaveHintListeners -> e
-    java.util.Set onSaveInstanceStateListeners -> f
-    java.util.Set onRequestPermissionsResultListeners -> b
+    java.util.Set onSaveInstanceStateListeners -> g
+    java.util.Set onRequestPermissionsResultListeners -> c
+    java.util.Set onActivityResultListeners -> d
+    java.util.Set onNewIntentListeners -> e
+    java.util.Set onUserLeaveHintListeners -> f
+    io.flutter.embedding.engine.plugins.lifecycle.HiddenLifecycleReference hiddenLifecycleReference -> b
     android.app.Activity activity -> a
     void addActivityResultListener(io.flutter.plugin.common.PluginRegistry$ActivityResultListener) -> a
+    void addRequestPermissionsResultListener(io.flutter.plugin.common.PluginRegistry$RequestPermissionsResultListener) -> a
+    java.lang.Object getLifecycle() -> a
     boolean onActivityResult(int,int,android.content.Intent) -> a
     void onNewIntent(android.content.Intent) -> a
     boolean onRequestPermissionsResult(int,java.lang.String[],int[]) -> a
     void onRestoreInstanceState(android.os.Bundle) -> a
-    void onUserLeaveHint() -> a
     void onSaveInstanceState(android.os.Bundle) -> b
+    void onUserLeaveHint() -> b
     void removeActivityResultListener(io.flutter.plugin.common.PluginRegistry$ActivityResultListener) -> b
+    void removeRequestPermissionsResultListener(io.flutter.plugin.common.PluginRegistry$RequestPermissionsResultListener) -> b
     android.app.Activity getActivity() -> f
 io.flutter.embedding.engine.FlutterEnginePluginRegistry$FlutterEngineBroadcastReceiverPluginBinding -> io.flutter.embedding.engine.c$d:
 io.flutter.embedding.engine.FlutterEnginePluginRegistry$FlutterEngineContentProviderPluginBinding -> io.flutter.embedding.engine.c$e:
@@ -7113,6 +7773,7 @@ io.flutter.embedding.engine.dart.DartExecutor -> io.flutter.embedding.engine.e.a
     java.lang.String access$002(io.flutter.embedding.engine.dart.DartExecutor,java.lang.String) -> a
     void executeDartEntrypoint(io.flutter.embedding.engine.dart.DartExecutor$DartEntrypoint) -> a
     java.lang.String getIsolateServiceId() -> a
+    void send(java.lang.String,java.nio.ByteBuffer) -> a
     void send(java.lang.String,java.nio.ByteBuffer,io.flutter.plugin.common.BinaryMessenger$BinaryReply) -> a
     void setMessageHandler(java.lang.String,io.flutter.plugin.common.BinaryMessenger$BinaryMessageHandler) -> a
     io.flutter.embedding.engine.dart.DartExecutor$IsolateServiceIdListener access$100(io.flutter.embedding.engine.dart.DartExecutor) -> b
@@ -7128,6 +7789,7 @@ io.flutter.embedding.engine.dart.DartExecutor$DartEntrypoint -> io.flutter.embed
     java.lang.String dartEntrypointFunctionName -> b
 io.flutter.embedding.engine.dart.DartExecutor$DefaultBinaryMessenger -> io.flutter.embedding.engine.e.a$c:
     io.flutter.embedding.engine.dart.DartMessenger messenger -> b
+    void send(java.lang.String,java.nio.ByteBuffer) -> a
     void send(java.lang.String,java.nio.ByteBuffer,io.flutter.plugin.common.BinaryMessenger$BinaryReply) -> a
     void setMessageHandler(java.lang.String,io.flutter.plugin.common.BinaryMessenger$BinaryMessageHandler) -> a
 io.flutter.embedding.engine.dart.DartExecutor$IsolateServiceIdListener -> io.flutter.embedding.engine.e.a$d:
@@ -7139,6 +7801,7 @@ io.flutter.embedding.engine.dart.DartMessenger -> io.flutter.embedding.engine.e.
     int nextReplyId -> e
     void handleMessageFromDart(java.lang.String,byte[],int) -> a
     void handlePlatformMessageResponse(int,byte[]) -> a
+    void send(java.lang.String,java.nio.ByteBuffer) -> a
     void send(java.lang.String,java.nio.ByteBuffer,io.flutter.plugin.common.BinaryMessenger$BinaryReply) -> a
     void setMessageHandler(java.lang.String,io.flutter.plugin.common.BinaryMessenger$BinaryMessageHandler) -> a
 io.flutter.embedding.engine.dart.DartMessenger$Reply -> io.flutter.embedding.engine.e.b$a:
@@ -7238,7 +7901,6 @@ io.flutter.embedding.engine.plugins.activity.ActivityControlSurface -> io.flutte
     void attachToActivity(android.app.Activity,androidx.lifecycle.Lifecycle) -> a
     boolean onActivityResult(int,int,android.content.Intent) -> a
     void onNewIntent(android.content.Intent) -> a
-    boolean onRequestPermissionsResult(int,java.lang.String[],int[]) -> a
     void onRestoreInstanceState(android.os.Bundle) -> a
     void onUserLeaveHint() -> a
     void detachFromActivity() -> b
@@ -7246,7 +7908,10 @@ io.flutter.embedding.engine.plugins.activity.ActivityControlSurface -> io.flutte
     void detachFromActivityForConfigChanges() -> c
 io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding -> io.flutter.embedding.engine.g.c.c:
     void addActivityResultListener(io.flutter.plugin.common.PluginRegistry$ActivityResultListener) -> a
+    void addRequestPermissionsResultListener(io.flutter.plugin.common.PluginRegistry$RequestPermissionsResultListener) -> a
+    java.lang.Object getLifecycle() -> a
     void removeActivityResultListener(io.flutter.plugin.common.PluginRegistry$ActivityResultListener) -> b
+    void removeRequestPermissionsResultListener(io.flutter.plugin.common.PluginRegistry$RequestPermissionsResultListener) -> b
     android.app.Activity getActivity() -> f
 io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding$OnSaveInstanceStateListener -> io.flutter.embedding.engine.g.c.c$a:
     void onRestoreInstanceState(android.os.Bundle) -> a
@@ -7261,6 +7926,8 @@ io.flutter.embedding.engine.plugins.contentprovider.ContentProviderAware -> io.f
     void onDetachedFromContentProvider() -> a
 io.flutter.embedding.engine.plugins.contentprovider.ContentProviderControlSurface -> io.flutter.embedding.engine.g.e.b:
 io.flutter.embedding.engine.plugins.contentprovider.ContentProviderPluginBinding -> io.flutter.embedding.engine.g.e.c:
+io.flutter.embedding.engine.plugins.lifecycle.FlutterLifecycleAdapter -> io.flutter.embedding.engine.plugins.lifecycle.a:
+    androidx.lifecycle.Lifecycle getActivityLifecycle(io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding) -> a
 io.flutter.embedding.engine.plugins.service.ServiceAware -> io.flutter.embedding.engine.g.f.a:
     void onAttachedToService(io.flutter.embedding.engine.plugins.service.ServicePluginBinding) -> a
     void onDetachedFromService() -> a
@@ -7700,20 +8367,47 @@ io.flutter.plugin.common.BasicMessageChannel$MessageHandler -> d.a.c.a.a$d:
 io.flutter.plugin.common.BasicMessageChannel$Reply -> d.a.c.a.a$e:
     void reply(java.lang.Object) -> a
 io.flutter.plugin.common.BinaryMessenger -> d.a.c.a.b:
+    void send(java.lang.String,java.nio.ByteBuffer) -> a
     void send(java.lang.String,java.nio.ByteBuffer,io.flutter.plugin.common.BinaryMessenger$BinaryReply) -> a
     void setMessageHandler(java.lang.String,io.flutter.plugin.common.BinaryMessenger$BinaryMessageHandler) -> a
 io.flutter.plugin.common.BinaryMessenger$BinaryMessageHandler -> d.a.c.a.b$a:
     void onMessage(java.nio.ByteBuffer,io.flutter.plugin.common.BinaryMessenger$BinaryReply) -> a
 io.flutter.plugin.common.BinaryMessenger$BinaryReply -> d.a.c.a.b$b:
     void reply(java.nio.ByteBuffer) -> a
-io.flutter.plugin.common.FlutterException -> d.a.c.a.c:
+io.flutter.plugin.common.EventChannel -> d.a.c.a.c:
+    io.flutter.plugin.common.MethodCodec codec -> c
+    io.flutter.plugin.common.BinaryMessenger messenger -> a
+    java.lang.String name -> b
+    io.flutter.plugin.common.MethodCodec access$000(io.flutter.plugin.common.EventChannel) -> a
+    void setStreamHandler(io.flutter.plugin.common.EventChannel$StreamHandler) -> a
+    java.lang.String access$200(io.flutter.plugin.common.EventChannel) -> b
+    io.flutter.plugin.common.BinaryMessenger access$400(io.flutter.plugin.common.EventChannel) -> c
+io.flutter.plugin.common.EventChannel$1 -> d.a.c.a.c$a:
+io.flutter.plugin.common.EventChannel$EventSink -> d.a.c.a.c$b:
+    void success(java.lang.Object) -> a
+io.flutter.plugin.common.EventChannel$IncomingStreamRequestHandler -> d.a.c.a.c$c:
+    io.flutter.plugin.common.EventChannel this$0 -> c
+    java.util.concurrent.atomic.AtomicReference activeSink -> b
+    io.flutter.plugin.common.EventChannel$StreamHandler handler -> a
+    java.util.concurrent.atomic.AtomicReference access$300(io.flutter.plugin.common.EventChannel$IncomingStreamRequestHandler) -> a
+    void onCancel(java.lang.Object,io.flutter.plugin.common.BinaryMessenger$BinaryReply) -> a
+    void onMessage(java.nio.ByteBuffer,io.flutter.plugin.common.BinaryMessenger$BinaryReply) -> a
+    void onListen(java.lang.Object,io.flutter.plugin.common.BinaryMessenger$BinaryReply) -> b
+io.flutter.plugin.common.EventChannel$IncomingStreamRequestHandler$EventSinkImplementation -> d.a.c.a.c$c$a:
+    io.flutter.plugin.common.EventChannel$IncomingStreamRequestHandler this$1 -> b
+    java.util.concurrent.atomic.AtomicBoolean hasEnded -> a
+    void success(java.lang.Object) -> a
+io.flutter.plugin.common.EventChannel$StreamHandler -> d.a.c.a.c$d:
+    void onCancel(java.lang.Object) -> a
+    void onListen(java.lang.Object,io.flutter.plugin.common.EventChannel$EventSink) -> a
+io.flutter.plugin.common.FlutterException -> d.a.c.a.d:
     java.lang.Object details -> c
     java.lang.String code -> b
-io.flutter.plugin.common.JSONMessageCodec -> d.a.c.a.d:
+io.flutter.plugin.common.JSONMessageCodec -> d.a.c.a.e:
     io.flutter.plugin.common.JSONMessageCodec INSTANCE -> a
     java.lang.Object decodeMessage(java.nio.ByteBuffer) -> a
     java.nio.ByteBuffer encodeMessage(java.lang.Object) -> a
-io.flutter.plugin.common.JSONMethodCodec -> d.a.c.a.e:
+io.flutter.plugin.common.JSONMethodCodec -> d.a.c.a.f:
     io.flutter.plugin.common.JSONMethodCodec INSTANCE -> a
     io.flutter.plugin.common.MethodCall decodeMethodCall(java.nio.ByteBuffer) -> a
     java.nio.ByteBuffer encodeErrorEnvelope(java.lang.String,java.lang.String,java.lang.Object) -> a
@@ -7722,17 +8416,17 @@ io.flutter.plugin.common.JSONMethodCodec -> d.a.c.a.e:
     java.nio.ByteBuffer encodeSuccessEnvelope(java.lang.Object) -> a
     java.lang.Object decodeEnvelope(java.nio.ByteBuffer) -> b
     java.lang.Object unwrapNull(java.lang.Object) -> b
-io.flutter.plugin.common.JSONUtil -> d.a.c.a.f:
+io.flutter.plugin.common.JSONUtil -> d.a.c.a.g:
     java.lang.Object wrap(java.lang.Object) -> a
-io.flutter.plugin.common.MessageCodec -> d.a.c.a.g:
+io.flutter.plugin.common.MessageCodec -> d.a.c.a.h:
     java.lang.Object decodeMessage(java.nio.ByteBuffer) -> a
     java.nio.ByteBuffer encodeMessage(java.lang.Object) -> a
-io.flutter.plugin.common.MethodCall -> d.a.c.a.h:
+io.flutter.plugin.common.MethodCall -> d.a.c.a.i:
     java.lang.Object arguments -> b
     java.lang.String method -> a
     java.lang.Object argument(java.lang.String) -> a
     java.lang.Object arguments() -> a
-io.flutter.plugin.common.MethodChannel -> d.a.c.a.i:
+io.flutter.plugin.common.MethodChannel -> d.a.c.a.j:
     io.flutter.plugin.common.MethodCodec codec -> c
     io.flutter.plugin.common.BinaryMessenger messenger -> a
     java.lang.String name -> b
@@ -7741,48 +8435,48 @@ io.flutter.plugin.common.MethodChannel -> d.a.c.a.i:
     void invokeMethod(java.lang.String,java.lang.Object,io.flutter.plugin.common.MethodChannel$Result) -> a
     void setMethodCallHandler(io.flutter.plugin.common.MethodChannel$MethodCallHandler) -> a
     java.lang.String access$100(io.flutter.plugin.common.MethodChannel) -> b
-io.flutter.plugin.common.MethodChannel$IncomingMethodCallHandler -> d.a.c.a.i$a:
+io.flutter.plugin.common.MethodChannel$IncomingMethodCallHandler -> d.a.c.a.j$a:
     io.flutter.plugin.common.MethodChannel$MethodCallHandler handler -> a
     io.flutter.plugin.common.MethodChannel this$0 -> b
     java.lang.String getStackTrace(java.lang.Exception) -> a
     void onMessage(java.nio.ByteBuffer,io.flutter.plugin.common.BinaryMessenger$BinaryReply) -> a
-io.flutter.plugin.common.MethodChannel$IncomingMethodCallHandler$1 -> d.a.c.a.i$a$a:
+io.flutter.plugin.common.MethodChannel$IncomingMethodCallHandler$1 -> d.a.c.a.j$a$a:
     io.flutter.plugin.common.BinaryMessenger$BinaryReply val$reply -> a
     io.flutter.plugin.common.MethodChannel$IncomingMethodCallHandler this$1 -> b
     void error(java.lang.String,java.lang.String,java.lang.Object) -> a
     void notImplemented() -> a
     void success(java.lang.Object) -> a
-io.flutter.plugin.common.MethodChannel$IncomingResultHandler -> d.a.c.a.i$b:
+io.flutter.plugin.common.MethodChannel$IncomingResultHandler -> d.a.c.a.j$b:
     io.flutter.plugin.common.MethodChannel$Result callback -> a
     io.flutter.plugin.common.MethodChannel this$0 -> b
     void reply(java.nio.ByteBuffer) -> a
-io.flutter.plugin.common.MethodChannel$MethodCallHandler -> d.a.c.a.i$c:
+io.flutter.plugin.common.MethodChannel$MethodCallHandler -> d.a.c.a.j$c:
     void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> a
-io.flutter.plugin.common.MethodChannel$Result -> d.a.c.a.i$d:
+io.flutter.plugin.common.MethodChannel$Result -> d.a.c.a.j$d:
     void error(java.lang.String,java.lang.String,java.lang.Object) -> a
     void notImplemented() -> a
     void success(java.lang.Object) -> a
-io.flutter.plugin.common.MethodCodec -> d.a.c.a.j:
+io.flutter.plugin.common.MethodCodec -> d.a.c.a.k:
     io.flutter.plugin.common.MethodCall decodeMethodCall(java.nio.ByteBuffer) -> a
     java.nio.ByteBuffer encodeErrorEnvelope(java.lang.String,java.lang.String,java.lang.Object) -> a
     java.nio.ByteBuffer encodeErrorEnvelopeWithStacktrace(java.lang.String,java.lang.String,java.lang.Object,java.lang.String) -> a
     java.nio.ByteBuffer encodeMethodCall(io.flutter.plugin.common.MethodCall) -> a
     java.nio.ByteBuffer encodeSuccessEnvelope(java.lang.Object) -> a
     java.lang.Object decodeEnvelope(java.nio.ByteBuffer) -> b
-io.flutter.plugin.common.PluginRegistry -> d.a.c.a.k:
-io.flutter.plugin.common.PluginRegistry$ActivityResultListener -> d.a.c.a.k$a:
+io.flutter.plugin.common.PluginRegistry -> d.a.c.a.l:
+io.flutter.plugin.common.PluginRegistry$ActivityResultListener -> d.a.c.a.l$a:
     boolean onActivityResult(int,int,android.content.Intent) -> a
-io.flutter.plugin.common.PluginRegistry$NewIntentListener -> d.a.c.a.k$b:
+io.flutter.plugin.common.PluginRegistry$NewIntentListener -> d.a.c.a.l$b:
     boolean onNewIntent(android.content.Intent) -> a
-io.flutter.plugin.common.PluginRegistry$Registrar -> d.a.c.a.k$c:
+io.flutter.plugin.common.PluginRegistry$Registrar -> d.a.c.a.l$c:
     io.flutter.plugin.common.PluginRegistry$Registrar addActivityResultListener(io.flutter.plugin.common.PluginRegistry$ActivityResultListener) -> a
+    io.flutter.plugin.common.PluginRegistry$Registrar addRequestPermissionsResultListener(io.flutter.plugin.common.PluginRegistry$RequestPermissionsResultListener) -> a
     java.lang.String lookupKeyForAsset(java.lang.String) -> a
-io.flutter.plugin.common.PluginRegistry$RequestPermissionsResultListener -> d.a.c.a.k$d:
-    boolean onRequestPermissionsResult(int,java.lang.String[],int[]) -> a
-io.flutter.plugin.common.PluginRegistry$UserLeaveHintListener -> d.a.c.a.k$e:
+io.flutter.plugin.common.PluginRegistry$RequestPermissionsResultListener -> d.a.c.a.l$d:
+io.flutter.plugin.common.PluginRegistry$UserLeaveHintListener -> d.a.c.a.l$e:
     void onUserLeaveHint() -> a
-io.flutter.plugin.common.PluginRegistry$ViewDestroyListener -> d.a.c.a.k$f:
-io.flutter.plugin.common.StandardMessageCodec -> d.a.c.a.l:
+io.flutter.plugin.common.PluginRegistry$ViewDestroyListener -> d.a.c.a.l$f:
+io.flutter.plugin.common.StandardMessageCodec -> d.a.c.a.m:
     java.nio.charset.Charset UTF8 -> c
     io.flutter.plugin.common.StandardMessageCodec INSTANCE -> a
     boolean LITTLE_ENDIAN -> b
@@ -7801,9 +8495,9 @@ io.flutter.plugin.common.StandardMessageCodec -> d.a.c.a.l:
     void writeInt(java.io.ByteArrayOutputStream,int) -> c
     int readSize(java.nio.ByteBuffer) -> d
     void writeSize(java.io.ByteArrayOutputStream,int) -> d
-io.flutter.plugin.common.StandardMessageCodec$ExposedByteArrayOutputStream -> d.a.c.a.l$a:
+io.flutter.plugin.common.StandardMessageCodec$ExposedByteArrayOutputStream -> d.a.c.a.m$a:
     byte[] buffer() -> a
-io.flutter.plugin.common.StandardMethodCodec -> d.a.c.a.m:
+io.flutter.plugin.common.StandardMethodCodec -> d.a.c.a.n:
     io.flutter.plugin.common.StandardMessageCodec messageCodec -> a
     io.flutter.plugin.common.StandardMethodCodec INSTANCE -> b
     io.flutter.plugin.common.MethodCall decodeMethodCall(java.nio.ByteBuffer) -> a
@@ -7813,7 +8507,7 @@ io.flutter.plugin.common.StandardMethodCodec -> d.a.c.a.m:
     java.nio.ByteBuffer encodeSuccessEnvelope(java.lang.Object) -> a
     java.lang.String getStackTrace(java.lang.Throwable) -> a
     java.lang.Object decodeEnvelope(java.nio.ByteBuffer) -> b
-io.flutter.plugin.common.StringCodec -> d.a.c.a.n:
+io.flutter.plugin.common.StringCodec -> d.a.c.a.o:
     java.nio.charset.Charset UTF8 -> a
     io.flutter.plugin.common.StringCodec INSTANCE -> b
     java.lang.Object decodeMessage(java.nio.ByteBuffer) -> a
@@ -8174,6 +8868,168 @@ io.flutter.plugin.platform.VirtualDisplayController$OneTimeOnDrawListener -> io.
     void schedule(android.view.View,java.lang.Runnable) -> a
 io.flutter.plugin.platform.VirtualDisplayController$OneTimeOnDrawListener$1 -> io.flutter.plugin.platform.k$b$a:
     io.flutter.plugin.platform.VirtualDisplayController$OneTimeOnDrawListener this$0 -> b
+io.flutter.plugins.flutter_plugin_android_lifecycle.FlutterAndroidLifecyclePlugin -> io.flutter.plugins.a.a:
+    void onAttachedToEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> a
+    void onDetachedFromEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> b
+io.flutter.plugins.imagepicker.CameraDevice -> io.flutter.plugins.imagepicker.a:
+    io.flutter.plugins.imagepicker.CameraDevice FRONT -> c
+    io.flutter.plugins.imagepicker.CameraDevice[] $VALUES -> d
+    io.flutter.plugins.imagepicker.CameraDevice REAR -> b
+io.flutter.plugins.imagepicker.ExifDataCopier -> io.flutter.plugins.imagepicker.b:
+    void copyExif(java.lang.String,java.lang.String) -> a
+    void setIfNotNull(androidx.exifinterface.media.ExifInterface,androidx.exifinterface.media.ExifInterface,java.lang.String) -> a
+io.flutter.plugins.imagepicker.FileUtils -> io.flutter.plugins.imagepicker.c:
+    void copy(java.io.InputStream,java.io.OutputStream) -> a
+    java.lang.String getImageExtension(android.net.Uri) -> a
+    java.lang.String getPathFromUri(android.content.Context,android.net.Uri) -> a
+io.flutter.plugins.imagepicker.ImagePickerCache -> io.flutter.plugins.imagepicker.d:
+    android.content.SharedPreferences prefs -> a
+    void clear() -> a
+    void saveDimensionWithMethodCall(io.flutter.plugin.common.MethodCall) -> a
+    void savePendingCameraMediaUriPath(android.net.Uri) -> a
+    void saveResult(java.lang.String,java.lang.String,java.lang.String) -> a
+    void saveTypeWithMethodCallName(java.lang.String) -> a
+    void setMaxDimension(java.lang.Double,java.lang.Double,int) -> a
+    java.util.Map getCacheMap() -> b
+    void setType(java.lang.String) -> b
+    java.lang.String retrievePendingCameraMediaUriPath() -> c
+io.flutter.plugins.imagepicker.ImagePickerDelegate -> io.flutter.plugins.imagepicker.e:
+    java.io.File externalFilesDirectory -> c
+    io.flutter.plugins.imagepicker.ImagePickerDelegate$FileUriResolver fileUriResolver -> h
+    io.flutter.plugin.common.MethodCall methodCall -> m
+    io.flutter.plugins.imagepicker.ImagePickerDelegate$IntentResolver intentResolver -> g
+    android.net.Uri pendingCameraMediaUri -> k
+    io.flutter.plugins.imagepicker.ImageResizer imageResizer -> d
+    io.flutter.plugins.imagepicker.CameraDevice cameraDevice -> j
+    io.flutter.plugins.imagepicker.ImagePickerCache cache -> e
+    io.flutter.plugin.common.MethodChannel$Result pendingResult -> l
+    java.lang.String fileProviderName -> a
+    io.flutter.plugins.imagepicker.ImagePickerDelegate$PermissionManager permissionManager -> f
+    io.flutter.plugins.imagepicker.FileUtils fileUtils -> i
+    android.app.Activity activity -> b
+    void access$000(io.flutter.plugins.imagepicker.ImagePickerDelegate,java.lang.String,boolean) -> a
+    void access$100(io.flutter.plugins.imagepicker.ImagePickerDelegate,java.lang.String) -> a
+    void chooseImageFromGallery(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> a
+    java.io.File createTemporaryWritableFile(java.lang.String) -> a
+    void finishWithError(java.lang.String,java.lang.String) -> a
+    void grantUriPermissions(android.content.Intent,android.net.Uri) -> a
+    void handleCaptureImageResult(int) -> a
+    void handleChooseImageResult(int,android.content.Intent) -> a
+    void handleImageResult(java.lang.String,boolean) -> a
+    boolean onActivityResult(int,int,android.content.Intent) -> a
+    void retrieveLostImage(io.flutter.plugin.common.MethodChannel$Result) -> a
+    void saveStateBeforeResult() -> a
+    void setCameraDevice(io.flutter.plugins.imagepicker.CameraDevice) -> a
+    void useFrontCamera(android.content.Intent) -> a
+    void chooseVideoFromGallery(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> b
+    void clearMethodCallAndResult() -> b
+    void finishWithAlreadyActiveError(io.flutter.plugin.common.MethodChannel$Result) -> b
+    void finishWithSuccess(java.lang.String) -> b
+    void handleCaptureVideoResult(int) -> b
+    void handleChooseVideoResult(int,android.content.Intent) -> b
+    java.io.File createTemporaryWritableImageFile() -> c
+    void handleVideoResult(java.lang.String) -> c
+    void takeImageWithCamera(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> c
+    java.io.File createTemporaryWritableVideoFile() -> d
+    void takeVideoWithCamera(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> d
+    void launchPickImageFromGalleryIntent() -> e
+    boolean setPendingMethodCallAndResult(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> e
+    void launchPickVideoFromGalleryIntent() -> f
+    void launchTakeImageWithCameraIntent() -> g
+    void launchTakeVideoWithCameraIntent() -> h
+    boolean needRequestCameraPermission() -> i
+io.flutter.plugins.imagepicker.ImagePickerDelegate$1 -> io.flutter.plugins.imagepicker.e$a:
+    android.app.Activity val$activity -> a
+    void askForPermission(java.lang.String,int) -> a
+    boolean isPermissionGranted(java.lang.String) -> a
+    boolean needRequestCameraPermission() -> a
+io.flutter.plugins.imagepicker.ImagePickerDelegate$2 -> io.flutter.plugins.imagepicker.e$b:
+    android.app.Activity val$activity -> a
+    boolean resolveActivity(android.content.Intent) -> a
+io.flutter.plugins.imagepicker.ImagePickerDelegate$3 -> io.flutter.plugins.imagepicker.e$c:
+    android.app.Activity val$activity -> a
+    void getFullImagePath(android.net.Uri,io.flutter.plugins.imagepicker.ImagePickerDelegate$OnPathReadyListener) -> a
+    android.net.Uri resolveFileProviderUriForFile(java.lang.String,java.io.File) -> a
+io.flutter.plugins.imagepicker.ImagePickerDelegate$3$1 -> io.flutter.plugins.imagepicker.e$c$a:
+    io.flutter.plugins.imagepicker.ImagePickerDelegate$OnPathReadyListener val$listener -> a
+io.flutter.plugins.imagepicker.ImagePickerDelegate$4 -> io.flutter.plugins.imagepicker.e$d:
+    io.flutter.plugins.imagepicker.ImagePickerDelegate this$0 -> a
+    void onPathReady(java.lang.String) -> a
+io.flutter.plugins.imagepicker.ImagePickerDelegate$5 -> io.flutter.plugins.imagepicker.e$e:
+    io.flutter.plugins.imagepicker.ImagePickerDelegate this$0 -> a
+    void onPathReady(java.lang.String) -> a
+io.flutter.plugins.imagepicker.ImagePickerDelegate$FileUriResolver -> io.flutter.plugins.imagepicker.e$f:
+    void getFullImagePath(android.net.Uri,io.flutter.plugins.imagepicker.ImagePickerDelegate$OnPathReadyListener) -> a
+    android.net.Uri resolveFileProviderUriForFile(java.lang.String,java.io.File) -> a
+io.flutter.plugins.imagepicker.ImagePickerDelegate$IntentResolver -> io.flutter.plugins.imagepicker.e$g:
+    boolean resolveActivity(android.content.Intent) -> a
+io.flutter.plugins.imagepicker.ImagePickerDelegate$OnPathReadyListener -> io.flutter.plugins.imagepicker.e$h:
+    void onPathReady(java.lang.String) -> a
+io.flutter.plugins.imagepicker.ImagePickerDelegate$PermissionManager -> io.flutter.plugins.imagepicker.e$i:
+    void askForPermission(java.lang.String,int) -> a
+    boolean isPermissionGranted(java.lang.String) -> a
+    boolean needRequestCameraPermission() -> a
+io.flutter.plugins.imagepicker.ImagePickerPlugin -> io.flutter.plugins.imagepicker.ImagePickerPlugin:
+    io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding activityBinding -> e
+    io.flutter.plugins.imagepicker.ImagePickerPlugin$LifeCycleObserver observer -> i
+    android.app.Activity activity -> g
+    io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding pluginBinding -> d
+    androidx.lifecycle.Lifecycle lifecycle -> h
+    io.flutter.plugins.imagepicker.ImagePickerDelegate delegate -> c
+    io.flutter.plugin.common.MethodChannel channel -> b
+    android.app.Application application -> f
+    io.flutter.plugins.imagepicker.ImagePickerDelegate access$000(io.flutter.plugins.imagepicker.ImagePickerPlugin) -> a
+    io.flutter.plugins.imagepicker.ImagePickerDelegate constructDelegate(android.app.Activity) -> a
+    void onAttachedToActivity(io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding) -> a
+    void onAttachedToEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> a
+    void onDetachedFromActivity() -> a
+    void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> a
+    void setup(io.flutter.plugin.common.BinaryMessenger,android.app.Application,android.app.Activity,io.flutter.plugin.common.PluginRegistry$Registrar,io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding) -> a
+    void onDetachedFromActivityForConfigChanges() -> b
+    void onDetachedFromEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> b
+    void onReattachedToActivityForConfigChanges(io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding) -> b
+    void tearDown() -> c
+io.flutter.plugins.imagepicker.ImagePickerPlugin$LifeCycleObserver -> io.flutter.plugins.imagepicker.ImagePickerPlugin$LifeCycleObserver:
+    io.flutter.plugins.imagepicker.ImagePickerPlugin this$0 -> b
+    android.app.Activity thisActivity -> a
+    void onResume(androidx.lifecycle.LifecycleOwner) -> a
+    void onDestroy(androidx.lifecycle.LifecycleOwner) -> b
+    void onCreate(androidx.lifecycle.LifecycleOwner) -> c
+    void onPause(androidx.lifecycle.LifecycleOwner) -> d
+    void onStop(androidx.lifecycle.LifecycleOwner) -> e
+    void onStart(androidx.lifecycle.LifecycleOwner) -> f
+io.flutter.plugins.imagepicker.ImagePickerPlugin$MethodResultWrapper -> io.flutter.plugins.imagepicker.ImagePickerPlugin$a:
+    io.flutter.plugin.common.MethodChannel$Result methodResult -> a
+    android.os.Handler handler -> b
+    io.flutter.plugin.common.MethodChannel$Result access$100(io.flutter.plugins.imagepicker.ImagePickerPlugin$MethodResultWrapper) -> a
+    void error(java.lang.String,java.lang.String,java.lang.Object) -> a
+    void notImplemented() -> a
+    void success(java.lang.Object) -> a
+io.flutter.plugins.imagepicker.ImagePickerPlugin$MethodResultWrapper$1 -> io.flutter.plugins.imagepicker.ImagePickerPlugin$a$a:
+    java.lang.Object val$result -> b
+    io.flutter.plugins.imagepicker.ImagePickerPlugin$MethodResultWrapper this$0 -> c
+io.flutter.plugins.imagepicker.ImagePickerPlugin$MethodResultWrapper$2 -> io.flutter.plugins.imagepicker.ImagePickerPlugin$a$b:
+    java.lang.Object val$errorDetails -> d
+    io.flutter.plugins.imagepicker.ImagePickerPlugin$MethodResultWrapper this$0 -> e
+    java.lang.String val$errorMessage -> c
+    java.lang.String val$errorCode -> b
+io.flutter.plugins.imagepicker.ImagePickerPlugin$MethodResultWrapper$3 -> io.flutter.plugins.imagepicker.ImagePickerPlugin$a$c:
+    io.flutter.plugins.imagepicker.ImagePickerPlugin$MethodResultWrapper this$0 -> b
+io.flutter.plugins.imagepicker.ImagePickerUtils -> io.flutter.plugins.imagepicker.f:
+    boolean isPermissionPresentInManifest(android.content.Context,java.lang.String) -> a
+    boolean needRequestCameraPermission(android.content.Context) -> a
+io.flutter.plugins.imagepicker.ImageResizer -> io.flutter.plugins.imagepicker.g:
+    java.io.File externalFilesDirectory -> a
+    io.flutter.plugins.imagepicker.ExifDataCopier exifDataCopier -> b
+    void copyExif(java.lang.String,java.lang.String) -> a
+    java.io.File createFile(java.io.File,java.lang.String) -> a
+    java.io.File createImageOnExternalDirectory(java.lang.String,android.graphics.Bitmap,int) -> a
+    java.io.FileOutputStream createOutputStream(java.io.File) -> a
+    android.graphics.Bitmap createScaledBitmap(android.graphics.Bitmap,int,int,boolean) -> a
+    android.graphics.Bitmap decodeFile(java.lang.String) -> a
+    boolean isImageQualityValid(java.lang.Integer) -> a
+    java.lang.String resizeImageIfNeeded(java.lang.String,java.lang.Double,java.lang.Double,java.lang.Integer) -> a
+    java.io.File resizedImage(android.graphics.Bitmap,java.lang.Double,java.lang.Double,java.lang.Integer,java.lang.String) -> a
 io.flutter.util.PathUtils -> d.a.d.a:
     java.lang.String getCacheDirectory(android.content.Context) -> a
     java.lang.String getDataDirectory(android.content.Context) -> b
@@ -8501,6 +9357,7 @@ io.flutter.view.FlutterView -> io.flutter.view.e:
     io.flutter.view.TextureRegistry$SurfaceTextureEntry createSurfaceTexture() -> a
     android.view.PointerIcon getSystemPointerIcon(int) -> a
     int guessBottomKeyboardInset(android.view.WindowInsets) -> a
+    void send(java.lang.String,java.nio.ByteBuffer) -> a
     void send(java.lang.String,java.nio.ByteBuffer,io.flutter.plugin.common.BinaryMessenger$BinaryReply) -> a
     void setMessageHandler(java.lang.String,io.flutter.plugin.common.BinaryMessenger$BinaryMessageHandler) -> a
     void assertAttached() -> b

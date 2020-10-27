@@ -1,4 +1,4 @@
-#Tue Oct 27 02:57:43 GMT 2020
+#Tue Oct 27 22:58:48 GMT 2020
 base.0=/Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

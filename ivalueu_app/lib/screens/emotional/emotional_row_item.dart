@@ -1,20 +1,18 @@
 import 'package:flutter/cupertino.dart';
+import 'package:ivalueu_app/screens/emotional/meditation_animation.dart';
 import 'package:ivalueu_app/screens/physical/video_list.dart';
-import 'package:provider/provider.dart';
 
 import 'package:ivalueu_app/model/video.dart';
 import 'package:ivalueu_app/Styles.dart';
 
 class EmotionalRowItem extends StatelessWidget {
-  const EmotionalRowItem({
-    this.index,
-    this.group,
-    this.lastItem,
-  });
+  const EmotionalRowItem(
+      {this.index, this.group, this.lastItem, this.location});
 
   final EmotionalGroup group;
   final int index;
   final bool lastItem;
+  final Location location;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +27,20 @@ class EmotionalRowItem extends StatelessWidget {
       ),
       child: GestureDetector(
         onTap: () {
-          Navigator.push(context, CupertinoPageRoute(builder: (context) => VideoList(category: group.category)),);
+          if (group.category == VideoCategory.meditation) {
+            Navigator.push(
+              context,
+              CupertinoPageRoute(builder: (context) => MeditationAnimation()),
+            );
+          } else
+            Navigator.push(
+              context,
+              CupertinoPageRoute(
+                  builder: (context) => VideoList(
+                        category: group.category,
+                        location: location,
+                      )),
+            );
         },
         child: SizedBox(
           height: 110,
@@ -56,7 +67,6 @@ class EmotionalRowItem extends StatelessWidget {
                         style: Styles.VideoRowItemName,
                       ),
                       const Padding(padding: EdgeInsets.only(top: 8)),
-
                     ],
                   ),
                 ),
@@ -79,7 +89,6 @@ class EmotionalRowItem extends StatelessWidget {
             left: 100,
             right: 16,
           ),
-
         ),
       ],
     );

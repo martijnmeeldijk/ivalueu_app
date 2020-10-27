@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:ivalueu_app/screens/physical/video_preview.dart';
-import 'package:provider/provider.dart';
 
 import 'package:ivalueu_app/model/video.dart';
 import 'package:ivalueu_app/Styles.dart';

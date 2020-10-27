@@ -1,15 +1,17 @@
-# Referenced at /Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:17
+# Referenced at /Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:20
 -keep class androidx.core.app.CoreComponentFactory { <init>(); }
-# Referenced at /Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:22
+# Referenced at /Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:25
 -keep class com.example.ivalueu_app.MainActivity { <init>(); }
-# Referenced at /Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:73
+# Referenced at /Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:76
 -keep class com.pichillilorenzo.flutter_inappwebview.ChromeCustomTabs.ActionBroadcastReceiver { <init>(); }
-# Referenced at /Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:68
+# Referenced at /Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:71
 -keep class com.pichillilorenzo.flutter_inappwebview.ChromeCustomTabs.ChromeCustomTabsActivity { <init>(); }
-# Referenced at /Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:64
+# Referenced at /Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:67
 -keep class com.pichillilorenzo.flutter_inappwebview.InAppBrowser.InAppBrowserActivity { <init>(); }
-# Referenced at /Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:17
+# Referenced at /Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:20
 -keep class io.flutter.app.FlutterApplication { <init>(); }
+# Referenced at /Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:78
+-keep class io.flutter.plugins.imagepicker.ImagePickerFileProvider { <init>(); }
 # Referenced at /Users/martijn/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/layout/abc_alert_dialog_title_material.xml:56
 # Referenced at /Users/martijn/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/layout/abc_alert_dialog_material.xml:52
 # Referenced at /Users/martijn/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/layout/abc_alert_dialog_button_bar_material.xml:43

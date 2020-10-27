@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
-import 'home.dart';
+import 'home/home.dart';
 import 'physical/physical.dart';
 import 'emotional/emotional.dart';
 import 'photo_diary/photo_diary.dart';

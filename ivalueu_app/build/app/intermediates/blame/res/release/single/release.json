@@ -8,12 +8,12 @@
         "source": "/Users/martijn/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/layout/abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "/Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/res/merged/release/drawable-xxhdpi-v4_abc_ic_star_black_36dp.png.flat",
-        "source": "/Users/martijn/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/drawable-xxhdpi-v4/abc_ic_star_black_36dp.png"
-    },
-    {
         "merged": "/Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/res/merged/release/drawable_floating_action_mode_shape.xml.flat",
         "source": "/Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/flutter_inappwebview/intermediates/packaged_res/release/drawable/floating_action_mode_shape.xml"
+    },
+    {
+        "merged": "/Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/res/merged/release/drawable-xxhdpi-v4_abc_ic_star_black_36dp.png.flat",
+        "source": "/Users/martijn/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/drawable-xxhdpi-v4/abc_ic_star_black_36dp.png"
     },
     {
         "merged": "/Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/res/merged/release/drawable_abc_ic_arrow_drop_right_black_24dp.xml.flat",
@@ -854,6 +854,10 @@
     {
         "merged": "/Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/res/merged/release/drawable-hdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "/Users/martijn/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/res/merged/release/xml_flutter_image_picker_file_paths.xml.flat",
+        "source": "/Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/image_picker/intermediates/packaged_res/release/xml/flutter_image_picker_file_paths.xml"
     },
     {
         "merged": "/Users/martijn/Desktop/School/Cardiff/QSaS/projects/ivalueu_app/ivalueu_app/build/app/intermediates/res/merged/release/drawable-hdpi-v4_abc_list_pressed_holo_light.9.png.flat",

@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:ivalueu_app/Styles.dart';
 import 'package:ivalueu_app/model/photo_diary_entry.dart';
-import 'package:provider/provider.dart';
 
 
 class PhotoDiaryRowItem extends StatelessWidget {
