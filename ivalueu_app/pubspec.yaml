@@ -29,6 +29,7 @@ dependencies:
   shrine_images: ^1.0.0
   youtube_player_flutter: ^7.0.0+7
   flutter_form_builder: 3.14.1
+  image_picker: ^0.6.7+12
 
 
   # The following adds the Cupertino Icons font to your application.

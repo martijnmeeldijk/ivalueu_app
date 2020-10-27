@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 
 class PhotoDiaryEntry{
@@ -8,7 +10,7 @@ class PhotoDiaryEntry{
   });
   String title;
   String description;
-  String image;
+  File image;
 
 
 }
