@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:ivalueu_app/model/video.dart';
 import 'package:ivalueu_app/screens/emotional/emotional_list.dart';
 
+/// This widget displays the indoor/outdoor selection screen
 class EmotionalLocationSelection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

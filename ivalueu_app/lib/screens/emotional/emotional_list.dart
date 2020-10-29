@@ -5,6 +5,7 @@ import 'package:ivalueu_app/model/video_repository.dart';
 
 import 'emotional_row_item.dart';
 
+/// This widget contains the list of groups of [Video]s from the emotional [VideoCategory]
 class EmotionalList extends StatelessWidget {
   const EmotionalList({
     Key key,
@@ -15,7 +16,7 @@ class EmotionalList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final groups = EmotionalGroupRepository.loadGroups();
+    final groups = EmotionalGroupRepository.loadGroups(location);
     return CustomScrollView(
       semanticChildCount: groups.length,
       slivers: <Widget>[

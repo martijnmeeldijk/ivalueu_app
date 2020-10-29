@@ -6,6 +6,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:ivalueu_app/model/photo_diary_entry.dart';
 import 'package:ivalueu_app/model/photo_diary_repository.dart';
 
+/// This form is rendered when adding a new entry to the Photo Diary
 class TestForm extends StatefulWidget {
   @override
   _TestFormState createState() => _TestFormState();

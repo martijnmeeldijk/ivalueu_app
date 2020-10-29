@@ -4,6 +4,9 @@ import 'package:ivalueu_app/model/video.dart';
 import 'package:ivalueu_app/model/video_repository.dart';
 import 'video_row_item.dart';
 
+/// This widget contains a list of [Video]s which are taken from the [VideosRepository].
+///
+/// This component is reused for both physical and emotional menus
 class VideoList extends StatelessWidget {
   const VideoList({
     Key key,

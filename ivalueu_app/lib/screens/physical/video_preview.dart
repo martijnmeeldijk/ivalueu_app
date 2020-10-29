@@ -3,6 +3,7 @@ import 'package:ivalueu_app/model/video.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:flutter/material.dart';
 
+/// This widget displays the actual [Video] and is reused for each video
 class VideoPreview extends StatelessWidget {
   const VideoPreview({this.video});
   final Video video;

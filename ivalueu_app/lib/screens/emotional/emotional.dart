@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:ivalueu_app/screens/emotional/location_selection_emotional.dart';
 
+
+/// This widget contains the main screen of the emotional menu
 class Emotional extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

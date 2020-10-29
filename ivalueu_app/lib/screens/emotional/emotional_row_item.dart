@@ -5,6 +5,7 @@ import 'package:ivalueu_app/screens/physical/video_list.dart';
 import 'package:ivalueu_app/model/video.dart';
 import 'package:ivalueu_app/Styles.dart';
 
+/// This widget is rendered for each item in the list of emotional [Video] groups.
 class EmotionalRowItem extends StatelessWidget {
   const EmotionalRowItem(
       {this.index, this.group, this.lastItem, this.location});

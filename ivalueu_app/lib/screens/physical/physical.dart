@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:ivalueu_app/screens/physical/location_selection_physical.dart';
 
+/// The homepage for the physical tab
 class Physical extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

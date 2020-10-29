@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:ivalueu_app/model/video.dart';
 import 'package:ivalueu_app/screens/physical/video_list.dart';
 
+/// The location selection for the physical tab
 class PhysicalLocationSelection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

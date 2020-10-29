@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
+/// This widget contains the information about the participating organisations
 class Organisations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

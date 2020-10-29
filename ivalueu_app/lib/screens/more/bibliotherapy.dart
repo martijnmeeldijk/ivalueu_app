@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
+/// This widget contains the information displayed in the Bibliotherapy page
 class Bibliotherapy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

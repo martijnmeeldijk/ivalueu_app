@@ -3,8 +3,11 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:ivalueu_app/Styles.dart';
 import 'package:ivalueu_app/model/photo_diary_entry.dart';
+import 'package:ivalueu_app/model/photo_diary_repository.dart';
 
-
+/// This class contains a single item from the [PhotoDiaryRepository]
+///
+/// By reusing this component, I was able to prevent typing very many lines of code.
 class PhotoDiaryRowItem extends StatelessWidget {
   PhotoDiaryRowItem({
     this.index,

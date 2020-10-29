@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:flutter/material.dart';
 
+/// The meditation animation page
 class MeditationAnimation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

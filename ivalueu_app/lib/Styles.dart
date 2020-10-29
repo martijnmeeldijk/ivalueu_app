@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 
+
+/// This class contains some styling that's reused through the app
 abstract class Styles {
   static const TextStyle VideoRowItemName = TextStyle(
     color: Color.fromRGBO(0, 0, 0, 0.8),

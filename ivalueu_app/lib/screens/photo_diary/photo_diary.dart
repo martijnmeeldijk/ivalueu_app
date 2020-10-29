@@ -5,6 +5,8 @@ import 'package:ivalueu_app/screens/photo_diary/form_field.dart';
 import 'package:ivalueu_app/model/photo_diary_repository.dart';
 import 'package:ivalueu_app/screens/photo_diary/photo_diary_row_item.dart';
 
+/// This widget displays all the [PhotoDiaryEntry]s in the [PhotoDiaryRepository]
+/// in the form of a reusible widget [PhotoDiaryRowItem]
 class PhotoDiary extends StatefulWidget {
   @override
   _PhotoDiaryState createState() => _PhotoDiaryState();

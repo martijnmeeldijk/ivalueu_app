@@ -3,6 +3,10 @@ import 'package:ivalueu_app/model/user.dart';
 import 'package:ivalueu_app/model/user_repository.dart';
 import 'package:ivalueu_app/screens/home/register.dart';
 
+
+/// This widget contains the iValueU home page.
+///
+/// It's a stateful widget so that it can refresh its state when the [User] is logged in.
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();

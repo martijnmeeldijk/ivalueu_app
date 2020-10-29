@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:ivalueu_app/model/user.dart';
 import 'package:ivalueu_app/model/user_repository.dart';
 
+
+/// This widget contains the registration form for making a new [User].
+///
+/// Upon creating an account, the [User] is immediately logged in.
 class Register extends StatefulWidget {
   @override
   _TestFormState createState() => _TestFormState();

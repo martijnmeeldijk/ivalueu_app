@@ -1,5 +1,9 @@
 import 'video.dart';
 
+
+/// List of hardcoded videos
+///
+/// Could be replaced with a db in the future, but it's not in the scope of this assignment.
 class VideosRepository {
   static const _allVideos = <Video>[
     Video(
@@ -160,11 +164,17 @@ class VideosRepository {
         icon: "Blaenycwn school logo"),
   ];
 
+  /// Returns a [List] of [Video]
+  ///
+  /// Only returns the videos matching the [VideoCategory] and [Location]
   static List<Video> loadVideos(VideoCategory category, Location location) {
     return _allVideos.where((p) => p.category == category && p.location == location).toList();
   }
 }
 
+/// This class contains a hardcoded set of categories in which the emotional [Video]s are grouped
+///
+/// Again, this result could be achieved in a more flexible way using an RDBMS system, but this is beyond the scope of this project.
 class EmotionalGroupRepository {
   static const _allGroups = <EmotionalGroup>[
     EmotionalGroup(
@@ -184,8 +194,16 @@ class EmotionalGroupRepository {
         icon: "Meditation"
     ),
   ];
-  static List<EmotionalGroup> loadGroups() {
-    return _allGroups.toList();
+
+  /// Returns a [List] of [EmotionalGroup]s (sets of videos)
+  ///
+  /// Each group has a [VideoCategory] which indicates the set of videos to be loaded.
+  static List<EmotionalGroup> loadGroups(Location location) {
+    if(location == Location.indoors){
+      return _allGroups.toList();
+    }
+    return _allGroups.where((p) => p.category != VideoCategory.meditation).toList();
+
   }
 
   /*Video(

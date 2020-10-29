@@ -5,6 +5,9 @@ import 'emotional/emotional.dart';
 import 'photo_diary/photo_diary.dart';
 import 'more/more.dart';
 
+/// This widget contains the navigation of the app.
+///
+/// All other widgets are children of this widget.
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
@@ -12,8 +15,6 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 
 }
-
-/// This is the stateful widget that the main application instantiates.
 
 class _MyHomePageState extends State<MyHomePage> {
 

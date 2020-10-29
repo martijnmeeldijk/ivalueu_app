@@ -4,6 +4,9 @@ import 'package:ivalueu_app/screens/physical/video_preview.dart';
 import 'package:ivalueu_app/model/video.dart';
 import 'package:ivalueu_app/Styles.dart';
 
+/// This widget creates one entry to be used in a list of videos
+///
+/// Is reused for evert video
 class VideoRowItem extends StatelessWidget {
   const VideoRowItem({
     this.index,
